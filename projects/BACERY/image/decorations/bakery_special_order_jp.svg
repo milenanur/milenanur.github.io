@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 900 540">
+  <!-- Generator: Adobe Illustrator 30.8.2, SVG Export Plug-In . SVG Version: 2.1.4 Build 7)  -->
+  <defs>
+    <style>
+      .st0 {
+        font-family: ToppanBunkyuGothicPr6N-Regular-83pv-RKSJ-H, 'Toppan Bunkyu Gothic';
+        font-size: 41.04px;
+        stroke-width: .5px;
+      }
+
+      .st0, .st1, .st2 {
+        isolation: isolate;
+      }
+
+      .st0, .st2 {
+        fill: #25170f;
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .st3 {
+        stroke-width: 4.2px;
+      }
+
+      .st3, .st4 {
+        stroke: #d75b45;
+        stroke-linejoin: round;
+      }
+
+      .st3, .st4, .st5, .st6 {
+        fill: none;
+      }
+
+      .st3, .st7, .st5, .st6 {
+        stroke-linecap: round;
+      }
+
+      .st4 {
+        stroke-width: 3.2px;
+      }
+
+      .st7 {
+        fill: #b97924;
+      }
+
+      .st7, .st5, .st6 {
+        stroke: #b97924;
+      }
+
+      .st2 {
+        font-family: HiraMinProN-W6-83pv-RKSJ-H, 'Hiragino Mincho ProN';
+        font-size: 83.44px;
+      }
+
+      .st2, .st5 {
+        stroke-width: 3px;
+      }
+
+      .st8 {
+        fill: #6b371e;
+      }
+
+      .st9 {
+        opacity: .18;
+      }
+
+      .st10 {
+        fill: url(#_名称未設定グラデーション);
+      }
+
+      .st6 {
+        stroke-width: 2px;
+      }
+    </style>
+    <linearGradient id="_名称未設定グラデーション" data-name="名称未設定グラデーション" x1="619.67" y1="-1.03" x2="619.67" y2="-.03" gradientTransform="translate(-460582 479) scale(744 436)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffecc7"/>
+      <stop offset=".55" stop-color="#ffe4ad"/>
+      <stop offset="1" stop-color="#fad59c"/>
+    </linearGradient>
+  </defs>
+  <g id="Frame-shadow" class="st9">
+    <path class="st8" d="M112.72,124.14h232c10-59,46-91,106-91s96,32,106,91h232v23c.67,14,12,25,34,33v243c-18.67,4-31.33,19.33-38,46H116.72c-6.67-26.67-19.33-42-38-46v-243c22-8,33.33-19,34-33v-23h0Z"/>
+  </g>
+  <g id="Frame-cream-base">
+    <path class="st10" d="M115.56,120.25h232c10-59,46-91,106-91s96,32,106,91h232v23c.67,14,12,25,34,33v243c-18.67,4-31.33,19.33-38,46H119.56c-6.67-26.67-19.33-42-38-46v-243c22-8,33.33-19,34-33v-23Z"/>
+  </g>
+  <g id="Frame-red-outline">
+    <path class="st4" d="M127.54,132.3l231.46-1.3c10-59,37-88.37,91-88,62.35.43,88.89,29.39,98.89,88.39l229.63-.74s-.94,18.98,5.01,30.45c5.51,10.63,22.21,21.15,28.52,25.05v219.7c-19.33,9.33-33.07,30.56-35.07,48.56l-646.68-.53c-2-18-15.81-35.69-35.14-45.02v-220.72c1.68-1.04,20.44-10.45,27.42-22.47,6.65-11.44,4.96-33.38,4.96-33.38h0Z"/>
+  </g>
+  <g id="Chef-hat">
+    <path class="st3" d="M411.45,107.53c-13-7-15.77-22.2-3.77-31.2,9-7,13.77-8.51,19.77-2.51,7-20,30.79-23.84,45.46-2.6,9.78-7.68,25.56.84,24.77,14.12,12,4,13,23,1,30-9,5-15,5-22,3l-.93,22.25c-17.1-9.49-33.62-11-49.74-.82l-1.32-21.43c-7,3-15.33-1.72-13.23-10.8h0Z"/>
+    <path class="st3" d="M475.75,140.57s-8.91,7.54-24.39,7.26c-17.74-.31-25.35-8.08-25.35-8.08"/>
+  </g>
+  <g id="Editable-text">
+    <g class="st1">
+      <text class="st2" transform="translate(201.7 249.19) scale(.91 1)"><tspan x="0" y="0">オーダーメイド</tspan></text>
+    </g>
+    <g class="st1">
+      <text class="st0" transform="translate(179.9 316) scale(1.01 1)"><tspan x="0" y="0">香り豊かなパンやスイーツを</tspan><tspan x="-41.04" y="49.25">ご注文に合わせてお作りします。</tspan></text>
+    </g>
+  </g>
+  <g id="Wheat-decoration">
+    <path class="st6" d="M240,408h128"/>
+    <path class="st6" d="M530,408h128"/>
+    <path class="st5" d="M386.19,411.65c28.8-7.49,75.19-6.83,114.81.35"/>
+    <path class="st7" d="M410.9,405.33c7.38-12.1,17.49-18.24,30.31-18.42-3.01,9.99-13.11,16.13-30.31,18.42Z"/>
+    <path class="st7" d="M413.58,409.86c7.36,10.93,15.94,16.17,25.73,15.72-2.24-10.68-10.81-15.92-25.73-15.72Z"/>
+    <path class="st7" d="M436.05,402.69c8.67-12.67,19-17,31-13-5.33,9.33-15.67,13.67-31,13Z"/>
+    <path class="st7" d="M440.25,410.33c8.24,11,17.78,15.45,28.62,13.35-4.52-9.38-14.06-13.83-28.62-13.35Z"/>
+    <path class="st7" d="M464.59,404.12c7.33-11.33,16.67-14,28-8-7.33,8.67-16.67,11.33-28,8Z"/>
+    <path class="st7" d="M468.35,409.85c7.62,12.06,17.39,16.39,29.31,12.99-5.65-7.78-15.42-12.11-29.31-12.99Z"/>
+    <path class="st7" d="M490.05,409.78c8-5.33,17.33-4.67,28,2-9.33,4-18.67,3.33-28-2Z"/>
+  </g>
+  <path class="st3" d="M448.1,115.67s5.73,5.41,11.64,6.17c9.57,1.23,15.87-7.84,17.14-7.81"/>
+</svg>

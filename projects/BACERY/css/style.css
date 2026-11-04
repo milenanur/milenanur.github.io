@@ -1,0 +1,1544 @@
+/* Основные цвета и шрифты. Полосатый фон используется только в открытом меню. */
+:root {
+  --bg: #ffe2b0;
+  --stripe: #ffd0a2;
+  --accent: #f15b40;
+  --ink: #140501;
+  --brown: #63331c;
+  --line: #ad795046;
+  --card: #ffe8e3;
+  --paper: #fff0d3;
+  --font-main: 'Roboto', Arial, sans-serif;
+  --font-display: 'Philosopher', Georgia, serif;
+  --font-news: 'Inter', Arial, sans-serif;
+  --font-jp: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+}
+
+/* Общие правила, доступность и область страницы. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-main);
+  background: var(--bg);
+}
+body:has(.menu-dialog[open]) {
+  overflow: hidden;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--brown);
+  outline-offset: 5px;
+}
+button {
+  border: 0;
+}
+button[hidden],
+[hidden] {
+  display: none !important;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.skip {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  padding: 12px;
+  background: var(--paper);
+  z-index: 20;
+}
+.skip:focus {
+  top: 12px;
+}
+.site-shell {
+  max-width: 1440px;
+  margin: auto;
+  background: var(--bg);
+}
+.content {
+  width: calc(100% - 112px);
+  max-width: 1300px;
+  margin-inline: auto;
+}
+
+/* Шапка: логотип, переключение языка и основное меню. */
+.header {
+  padding: 18px 4% 22px;
+}
+.header-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: 106px;
+}
+.brand {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.logo {
+  width: clamp(180px, 24vw, 380px);
+  max-height: 132px;
+}
+.brand-ear {
+  width: 100px;
+  height: 80px;
+  object-fit: contain;
+}
+.brand-ear:first-child {
+  transform: scaleX(-1);
+}
+.languages {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  white-space: nowrap;
+  gap: 0;
+  font-family: var(--font-main);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--brown);
+}
+.header-row > .languages {
+  grid-column: 3;
+  justify-self: end;
+}
+.languages button {
+  flex: 0 0 30px;
+  width: 30px;
+  background: none;
+  padding: 10px 0;
+  min-height: 44px;
+  font-family: var(--font-main);
+  font-size: inherit;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+}
+.languages > span {
+  flex: 0 0 8px;
+  width: 8px;
+  text-align: center;
+}
+.languages button[aria-pressed='true'] {
+  color: #b83f2b;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  text-transform: uppercase;
+  font-size: clamp(16px, 1.8vw, 27px);
+  font-weight: 600;
+  margin-top: 14px;
+}
+.desktop-nav::before,
+.desktop-nav::after {
+  content: '';
+  flex: 1;
+  max-width: 150px;
+  border-top: 1px solid var(--line);
+}
+.desktop-nav i {
+  font-style: normal;
+}
+.desktop-nav a:hover,
+.footer a:hover {
+  color: #b83f2b;
+}
+.burger {
+  display: none;
+}
+
+/* Первый экран: фотографии, стрелки и баннер специального заказа. */
+.hero {
+  position: relative;
+}
+.slider {
+  position: relative;
+  overflow: hidden;
+  background: #f2dbd6;
+}
+.slider-track img {
+  width: 100%;
+  aspect-ratio: 1440/480;
+  object-fit: cover;
+}
+.slide-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff0dfde;
+  color: var(--brown);
+  font-size: 34px;
+  line-height: 1;
+}
+.previous {
+  left: 20px;
+}
+.next {
+  right: 20px;
+}
+.dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+.dots button {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 30px;
+  background: none;
+  padding: 0;
+}
+.dots button::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff0dc;
+}
+.dots button[aria-current='true']::before {
+  background: var(--accent);
+  box-shadow: 0 0 0 1px #fff;
+}
+.special-order {
+  position: absolute;
+  width: 36%;
+  right: 7%;
+  bottom: 34px;
+  pointer-events: none;
+}
+
+/* О пекарне: значки, слоган и вводный текст. */
+.about {
+  padding-top: 22px;
+  text-align: center;
+}
+.badges {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  margin-bottom: 12px;
+}
+.badges img {
+  width: 24%;
+  max-width: 270px;
+}
+.slogan {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+.slogan > img {
+  width: 8%;
+  max-width: 100px;
+}
+.slogan > img:first-child {
+  transform: scaleX(-1);
+}
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 6.7vw, 96px);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin: 10px 0;
+}
+h1 em {
+  color: var(--accent);
+  font-style: normal;
+}
+.intro {
+  font-size: clamp(17px, 2.15vw, 30px);
+  line-height: 1.35;
+  max-width: 1200px;
+  margin: 0 auto 36px;
+}
+
+/* Плашки разделов и тонкие линии по бокам. */
+.section-heading {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  justify-content: center;
+  margin: 36px 0 18px;
+}
+.section-heading::before,
+.section-heading::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid #99999988;
+}
+.section-heading > img {
+  width: 37%;
+  max-width: 470px;
+}
+
+/* Карточки меню: три колонки на компьютере, две на телефоне. */
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px 24px;
+}
+.product {
+  overflow: hidden;
+  text-align: center;
+  background: var(--card);
+  border: 1px solid #b77d6d;
+  border-radius: 34px;
+  box-shadow: inset 0 0 0 4px #fff6;
+}
+.product > img {
+  width: 100%;
+  aspect-ratio: 1.9;
+  object-fit: cover;
+  border: 4px solid #fff9;
+  border-radius: 32px;
+}
+.product-copy {
+  padding: 3px 12px 15px;
+}
+.product h3 {
+  font-size: clamp(18px, 2.2vw, 32px);
+  font-weight: 500;
+  line-height: 1.12;
+  margin: 0 0 4px;
+}
+.product p {
+  font-size: clamp(14px, 1.4vw, 20px);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Новости: фотография, текст и ленточка. */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.news-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid #ba8464;
+  border-radius: 24px;
+  margin-top: 10px;
+  min-width: 0;
+}
+.news-photo {
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  object-fit: cover;
+  border: 4px solid #fff9;
+  border-radius: 24px;
+}
+.news-copy {
+  padding: 14px 10px;
+  text-align: center;
+  align-self: center;
+}
+.news-copy h3 {
+  font-weight: 500;
+  font-size: clamp(17px, 1.9vw, 28px);
+  line-height: 1.08;
+  margin: 0 0 10px;
+  overflow-wrap: break-word;
+}
+.news-copy p {
+  font-family: var(--font-news);
+  font-size: clamp(14px, 1.25vw, 18px);
+  line-height: 1.2;
+  margin: 0;
+}
+.ribbon {
+  position: absolute;
+  top: -20px;
+  left: 20%;
+  width: 38%;
+  height: auto;
+}
+.order-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  border-radius: 100px;
+  background: #df513b;
+  color: #fff;
+  padding: 15px 28px;
+  min-height: 50px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+}
+.order-button:hover {
+  background: #bf3b2a;
+}
+.page-order {
+  margin: 55px auto 30px;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+/* Контакты: карта, адрес, соцсети и фотография пекарни. */
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.75fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.shop-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  max-height: 340px;
+}
+.map-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 24px;
+  border: 1px dashed #a16845;
+  background: #fff4db70;
+  border-radius: 24px;
+  text-align: center;
+  min-height: 210px;
+}
+.map-placeholder > img {
+  width: 36px;
+}
+.map-placeholder > p {
+  font-size: 15px;
+  line-height: 1.4;
+  max-width: 190px;
+}
+.map-placeholder.real-map {
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
+.real-map > img,
+.real-map > a,
+.real-map > a > img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+.contact-details {
+  align-self: center;
+}
+.contact-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: clamp(14px, 1.4vw, 20px);
+  line-height: 1.3;
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+.contact-pending {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--brown);
+}
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.socials a {
+  padding: 4px;
+}
+.socials img {
+  width: 40px;
+}
+
+/* Подвал и кнопка возврата наверх. */
+.footer {
+  text-align: center;
+  padding: 35px 0 28px;
+}
+.footer nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-transform: uppercase;
+  font-size: 19px;
+  font-weight: 600;
+}
+.footer > img {
+  width: 35%;
+  max-width: 430px;
+  margin: 24px auto 0;
+}
+.to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #df513b;
+  color: white;
+  font-size: 30px;
+  box-shadow: 0 2px 5px #0002;
+  z-index: 3;
+}
+
+/* Бургер-меню: никаких дополнительных рисунков не требуется. */
+.menu-dialog {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--brown);
+  width: min(100%, 480px);
+  max-width: 100%;
+  height: 100dvh;
+  max-height: 100dvh;
+  margin: 0 auto 0 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.menu-dialog::backdrop {
+  background: #27140c70;
+  backdrop-filter: blur(3px);
+}
+.menu-dialog[open] {
+  animation: menu-in 0.24s ease-out;
+}
+.menu-top {
+  display: grid;
+  grid-template-columns: 76px 1fr 76px;
+  gap: 8px;
+  align-items: center;
+  padding: 15px 16px;
+  background: repeating-linear-gradient(90deg, var(--bg) 0 24px, var(--stripe) 24px 48px);
+  border-bottom: 1px solid var(--line);
+}
+.close-menu {
+  background: transparent;
+  font:
+    40px/1 Arial,
+    sans-serif;
+  width: 44px;
+  height: 44px;
+  text-align: left;
+  padding: 0;
+}
+.menu-brand {
+  justify-self: center;
+  width: min(100%, 160px);
+}
+.menu-top .languages {
+  font-size: 15px;
+}
+.menu-paper {
+  position: relative;
+  padding: 30px 26px 28px;
+  margin-bottom: 16px;
+  background: var(--paper);
+  min-height: calc(100dvh - 110px);
+  box-shadow: 0 8px 16px #67321715;
+}
+.menu-paper::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -11px;
+  width: 100%;
+  height: 12px;
+  background: radial-gradient(circle at 12px 0, var(--paper) 12px, transparent 12.6px) 0 0/24px 12px
+    repeat-x;
+}
+.menu-ornament {
+  width: 125px;
+  margin: 0 auto 22px;
+}
+.menu-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 0 20px;
+}
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+}
+.mobile-nav a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+  border-bottom: 1px solid var(--line);
+  gap: 16px;
+  font-family: var(--font-display);
+  font-size: 30px;
+  padding: 10px 0;
+}
+.mobile-nav a:hover,
+.mobile-nav a[aria-current='location'] {
+  color: #b83f2b;
+}
+.nav-arrow {
+  font: 26px var(--font-main);
+  transition: transform 0.2s;
+}
+.mobile-nav a:hover .nav-arrow {
+  transform: translate(3px, -3px);
+}
+.menu-order {
+  width: 100%;
+  margin-top: 28px;
+  font-size: 16px;
+  letter-spacing: 0;
+}
+.menu-signature {
+  font-family: var(--font-display);
+  font-style: italic;
+  text-align: center;
+  font-size: 20px;
+  margin: 30px 0 13px;
+}
+.menu-bottom-ornament {
+  width: 135px;
+  margin: auto;
+}
+.order-dialog {
+  width: min(440px, calc(100% - 32px));
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--paper);
+  color: var(--brown);
+  padding: 38px 28px 26px;
+}
+.order-dialog::backdrop {
+  background: #27140c70;
+}
+.order-dialog h2 {
+  font: 30px var(--font-display);
+}
+.order-dialog p {
+  line-height: 1.5;
+}
+.order-close {
+  position: absolute;
+  right: 14px;
+  top: 8px;
+  background: none;
+  font-size: 32px;
+  width: 44px;
+  height: 44px;
+}
+.order-dismiss {
+  margin-top: 24px;
+  letter-spacing: 0;
+}
+@keyframes menu-in {
+  from {
+    transform: translateX(-24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+html[lang='ja'] body {
+  font-family: var(--font-jp);
+}
+html[lang='ja'] .mobile-nav a {
+  font-family: var(--font-jp);
+  font-size: 25px;
+}
+html[lang='ja'] h1 {
+  font-family: var(--font-jp);
+  font-size: clamp(32px, 5vw, 72px);
+}
+
+/* Большие мониторы от 1600 px. */
+@media (min-width: 1600px) {
+  body {
+    background: #f2e1c8;
+  }
+  .site-shell {
+    box-shadow: 0 0 30px #56320d15;
+  }
+}
+
+/* Планшеты и узкие окна до 1050 px. */
+@media (max-width: 1050px) {
+  .content {
+    width: calc(100% - 64px);
+  }
+  .brand-ear {
+    width: 65px;
+    height: 60px;
+  }
+  .header-row {
+    min-height: 75px;
+  }
+  .logo {
+    width: 235px;
+  }
+  .desktop-nav {
+    gap: 16px;
+    font-size: 16px;
+  }
+  .products {
+    gap: 14px;
+  }
+  .product {
+    border-radius: 23px;
+  }
+  .product > img {
+    border-radius: 22px;
+  }
+  .news-grid {
+    gap: 14px;
+  }
+  .news-card {
+    border-radius: 16px;
+  }
+  .news-photo {
+    border-radius: 16px;
+    min-height: 160px;
+  }
+  .news-copy {
+    padding: 12px 7px;
+  }
+  .news-copy h3 {
+    font-size: 18px;
+  }
+  .news-copy p {
+    font-size: 13px;
+  }
+  .contacts-grid {
+    gap: 14px;
+    grid-template-columns: 1fr 0.8fr 1fr;
+  }
+  .slogan {
+    gap: 12px;
+  }
+  .intro {
+    font-size: 18px;
+  }
+  .page-order {
+    font-size: 20px;
+  }
+}
+
+/* Телефоны до 720 px. */
+@media (max-width: 720px) {
+  .header {
+    padding: 10px 16px;
+  }
+  .header-row {
+    grid-template-columns: 76px 1fr 76px;
+    gap: 4px;
+    min-height: 58px;
+  }
+  .brand {
+    grid-column: 2;
+    justify-content: center;
+    gap: 0;
+    min-width: 0;
+  }
+  .logo {
+    width: 160px;
+    max-width: 100%;
+  }
+  .brand-ear {
+    display: none;
+  }
+  .languages {
+    font-size: 15px;
+  }
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    background: none;
+    width: 44px;
+    height: 44px;
+    padding: 7px;
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .burger span {
+    display: block;
+    width: 27px;
+    height: 2px;
+    background: var(--brown);
+    border-radius: 2px;
+  }
+  .desktop-nav {
+    display: none;
+  }
+  .content {
+    width: calc(100% - 32px);
+  }
+  .slider-track img {
+    aspect-ratio: 390/215;
+    object-fit: cover;
+  }
+  .slide-arrow {
+    width: 44px;
+    height: 44px;
+    background: #fff0dfbd;
+  }
+  .previous {
+    left: 2px;
+  }
+  .next {
+    right: 2px;
+  }
+  .dots {
+    bottom: 4px;
+  }
+  .special-order {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 74%;
+    max-width: 340px;
+    margin: -5px auto 0;
+    z-index: 1;
+  }
+  .about {
+    padding-top: 6px;
+  }
+  .badges {
+    gap: 4%;
+    margin-bottom: 16px;
+  }
+  .badges img {
+    width: 30%;
+  }
+  .slogan {
+    gap: 6px;
+  }
+  .slogan > img {
+    display: none;
+  }
+  h1 {
+    font-size: 42px;
+    max-width: 330px;
+    margin: 0 auto 14px;
+    line-height: 1.12;
+  }
+  .intro {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+  .section-heading {
+    gap: 12px;
+    margin: 28px 0 16px;
+  }
+  .section-heading > img {
+    width: 54%;
+  }
+  .products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .product {
+    border-radius: 18px;
+  }
+  .product > img {
+    border-width: 2px;
+    border-radius: 17px;
+    aspect-ratio: 1.5;
+  }
+  .product-copy {
+    padding: 6px 7px 12px;
+  }
+  .product h3 {
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: 5px;
+    overflow-wrap: break-word;
+  }
+  .product p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+  .product:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: calc((100% - 12px) / 2);
+    justify-self: center;
+  }
+  .news-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 12px;
+  }
+  .news-card {
+    grid-template-columns: 1fr;
+    border-radius: 16px;
+  }
+  .news-card:last-child {
+    grid-column: 1/-1;
+    width: calc((100% - 12px) / 2);
+    justify-self: center;
+  }
+  .news-photo {
+    height: 110px;
+    min-height: 0;
+    width: 100%;
+    border-radius: 16px;
+  }
+  .news-copy {
+    padding: 8px 8px 12px;
+    align-self: start;
+  }
+  .news-copy h3 {
+    font-size: 16px;
+  }
+  .news-copy p {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+  .ribbon {
+    width: 65%;
+    left: 12%;
+    top: -13px;
+  }
+  .page-order {
+    margin: 28px auto 20px;
+    font-size: 17px;
+  }
+  .contacts-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .shop-photo {
+    display: none;
+  }
+  .map-placeholder {
+    min-height: 190px;
+    padding: 12px;
+    border-radius: 16px;
+  }
+  .map-placeholder > p {
+    font-size: 13px;
+  }
+  .contact-pending {
+    font-size: 14px;
+  }
+  .contact-row {
+    font-size: 14px;
+    gap: 7px;
+  }
+  .footer {
+    padding-top: 24px;
+  }
+  .footer nav {
+    flex-wrap: wrap;
+    gap: 9px;
+    font-size: 12px;
+  }
+  .footer > img {
+    width: 50%;
+    margin-top: 20px;
+  }
+  .to-top {
+    right: 12px;
+    bottom: 12px;
+  }
+  html[lang='ja'] h1 {
+    font-size: 32px;
+  }
+}
+
+/* Узкие телефоны до 359 px. */
+@media (max-width: 359px) {
+  .header-row {
+    grid-template-columns: 58px 1fr 68px;
+  }
+  .logo {
+    width: 135px;
+  }
+  .languages {
+    font-size: 14px;
+  }
+  .content {
+    width: calc(100% - 24px);
+  }
+  h1 {
+    font-size: 36px;
+  }
+  .product h3 {
+    font-size: 16px;
+  }
+  .product-copy {
+    padding-inline: 5px;
+  }
+  .menu-top {
+    grid-template-columns: 54px 1fr 70px;
+    padding-inline: 12px;
+  }
+  .menu-paper {
+    padding-inline: 22px;
+  }
+  .mobile-nav a {
+    font-size: 27px;
+  }
+}
+
+/* Системная настройка: уменьшение анимации. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+.real-map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 230px;
+  border: 0;
+  border-radius: inherit;
+}
+
+/* Телефоны до 720 px. */
+@media (max-width: 720px) {
+  .real-map iframe {
+    min-height: 220px;
+  }
+}
+
+/* Японские тексты, стрелка кнопки и контактные данные. */
+.intro {
+  white-space: pre-line;
+}
+html[lang='ja'] h1 {
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0;
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+html[lang='ja'] .intro {
+  line-height: 1.7;
+}
+.button-arrow {
+  display: inline-block;
+  position: relative;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 20px;
+  align-self: center;
+}
+.button-arrow::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 2px;
+  top: 9px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+}
+.button-arrow::after {
+  content: '';
+  position: absolute;
+  right: 2px;
+  top: 3px;
+  width: 14px;
+  height: 14px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+.ribbon-label {
+  display: block;
+  z-index: 1;
+  top: -14px;
+  left: 18%;
+  width: auto;
+  min-width: 38%;
+  max-width: 80%;
+  padding: 5px 18px 5px 12px;
+  background: #c44332;
+  color: #fff;
+  clip-path: polygon(0 0, 100% 0, 93% 50%, 100% 100%, 0 100%);
+  transform: rotate(-8deg);
+  text-align: center;
+  white-space: nowrap;
+  font-family: var(--font-jp);
+  font-size: clamp(11px, 1.1vw, 16px);
+  font-weight: 700;
+  line-height: 1.3;
+}
+.contact-details {
+  min-width: 0;
+  padding-block: 10px;
+}
+.contact-row {
+  white-space: pre-line;
+}
+.socials {
+  justify-content: flex-start;
+  gap: 16px;
+  margin-top: 22px;
+  padding-left: 36px;
+}
+.social-link {
+  display: grid;
+  place-items: center;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 4px;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+}
+.socials img {
+  width: clamp(42px, 4.5vw, 60px);
+  height: auto;
+}
+.social-link:hover {
+  background: #fff5;
+}
+
+/* Планшеты: от 721 до 1050 px. */
+@media (max-width: 1050px) and (min-width: 721px) {
+  .contacts-grid {
+    grid-template-columns: 1fr 1.05fr 1fr;
+  }
+  .contact-row {
+    font-size: 15px;
+    gap: 8px;
+  }
+  .socials {
+    padding-left: 0;
+  }
+}
+
+/* Телефоны до 720 px. */
+@media (max-width: 720px) {
+  html[lang='ja'] .order-button {
+    font-size: 16px;
+    letter-spacing: 0;
+    gap: 12px;
+    padding-inline: 22px;
+  }
+  .ribbon-label {
+    font-size: 11px;
+    padding: 5px 12px 5px 9px;
+    left: 10%;
+    max-width: 90%;
+  }
+  .contacts-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 12px;
+  }
+  .contact-row {
+    font-size: 14px;
+    gap: 7px;
+  }
+  .socials {
+    padding-left: 0;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .socials img {
+    width: 44px;
+  }
+  .button-arrow {
+    flex-basis: 32px;
+    width: 32px;
+  }
+  html[lang='ja'] h1 {
+    font-size: 32px;
+  }
+}
+
+/* Узкие телефоны до 359 px. */
+@media (max-width: 359px) {
+  .contacts-grid {
+    grid-template-columns: 1fr;
+  }
+  .real-map iframe {
+    min-height: 230px;
+  }
+  .contact-details {
+    padding: 8px 10px;
+  }
+  .contact-row {
+    font-size: 16px;
+  }
+  .socials {
+    padding-left: 30px;
+  }
+  .section-heading {
+    gap: 8px;
+  }
+}
+
+/* Короткий японский слоган: одна строка, в том числе на 320px. */
+html[lang='ja'] .slogan h1 {
+  font-size: clamp(24px, 7.5vw, 72px);
+  font-weight: 700;
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+/* Слайдер: автоматическое перелистывание, центрированные стрелки. */
+.slider-track {
+  display: flex;
+  transform: translateX(-100%);
+  will-change: transform;
+}
+.slider-track img {
+  display: block;
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+.slide-arrow {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  line-height: normal;
+  font-size: 0;
+}
+.slide-chevron {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+}
+.next .slide-chevron {
+  transform: translateX(-2px) rotate(45deg);
+}
+.previous .slide-chevron {
+  transform: translateX(2px) rotate(-135deg);
+}
+.slider-toggle {
+  position: absolute;
+  right: 18px;
+  bottom: 10px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff0dfde;
+  color: var(--brown);
+  padding: 0;
+}
+.slider-toggle span {
+  width: 12px;
+  height: 15px;
+  border-inline: 4px solid currentColor;
+}
+.slider-toggle[aria-pressed='true'] span {
+  width: 0;
+  height: 0;
+  border: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 12px solid currentColor;
+  margin-left: 3px;
+}
+.product h3,
+.news-copy h3 {
+  font-weight: 700;
+}
+html[lang='ja'] body {
+  line-break: strict;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+html[lang='ja'] .intro,
+html[lang='ja'] .product p,
+html[lang='ja'] .news-copy p {
+  line-break: strict;
+  word-break: normal;
+  overflow-wrap: normal;
+  text-wrap: pretty;
+}
+html[lang='ja'] .product h3,
+html[lang='ja'] .news-copy h3 {
+  line-break: strict;
+  word-break: normal;
+  overflow-wrap: normal;
+  line-height: 1.4;
+}
+.jp-word {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+/* Компьютеры от 1051 px. */
+@media (min-width: 1051px) {
+  .contacts-grid {
+    grid-template-columns: 1.16fr 0.75fr 1fr;
+  }
+}
+
+/* Планшеты: от 721 до 1050 px. */
+@media (min-width: 721px) and (max-width: 1050px) {
+  .contacts-grid {
+    grid-template-columns: 1.16fr 1.05fr 1fr;
+  }
+}
+
+/* Телефоны до 720 px. */
+@media (max-width: 720px) {
+  .slider-toggle {
+    right: 9px;
+    bottom: 3px;
+  }
+  .ribbon {
+    width: 71.825%;
+    left: 9%;
+  }
+  .ribbon-label {
+    width: auto;
+    left: 10%;
+    transform: rotate(-8deg) scale(1.105);
+    transform-origin: center;
+  }
+}
+
+/* Контакты: пропорции карты, текста и фотографии по макету. */
+
+/* Компьютеры от 1051 px. */
+@media (min-width: 1051px) {
+  .contacts-grid {
+    width: 100%;
+    margin-left: 0;
+    gap: clamp(16px, 1.4vw, 21px);
+    grid-template-columns: minmax(0, 464fr) minmax(0, 250fr) minmax(0, 384fr);
+    height: clamp(270px, 23.6vw, 340px);
+  }
+}
+
+/* Планшеты: от 721 до 1050 px. */
+@media (min-width: 721px) and (max-width: 1050px) {
+  .contacts-grid {
+    width: 100%;
+    margin-left: 0;
+    gap: 14px;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 1.05fr) minmax(0, 1fr);
+  }
+}
+
+/* Финальная подгонка: ровный фон, оптический центр плашки и воздух в контактах. */
+body {
+  background: var(--bg);
+}
+.menu-section .section-heading {
+  position: relative;
+  --menu-plaque-width: min(37%, 470px);
+  --menu-rule-gap: 26px;
+}
+.menu-section .section-heading::before,
+.menu-section .section-heading::after {
+  position: absolute;
+  top: 62.7%;
+  width: calc((100% - var(--menu-plaque-width)) / 2 - var(--menu-rule-gap));
+}
+.menu-section .section-heading::before {
+  left: 0;
+}
+.menu-section .section-heading::after {
+  right: 0;
+}
+.contact-row {
+  gap: 12px;
+}
+.contact-row > img {
+  display: block;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  object-fit: contain;
+}
+.socials img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.footer nav {
+  font-size: 21px;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+/* Компьютеры от 1051 px. */
+@media (min-width: 1051px) {
+  .contact-row:first-child span {
+    white-space: pre;
+  }
+  .contact-row a[href^='mailto:'] {
+    white-space: nowrap;
+    font-size: inherit;
+  }
+}
+
+/* Планшеты: от 721 до 1050 px. */
+@media (min-width: 721px) and (max-width: 1050px) {
+  .contact-row {
+    gap: 8px;
+  }
+  .contact-row > img {
+    width: 26px;
+    height: 26px;
+    flex-basis: 26px;
+  }
+  .contact-row:first-child span {
+    white-space: pre;
+  }
+  .footer nav {
+    gap: 16px;
+  }
+}
+
+/* Телефоны до 720 px. */
+@media (max-width: 720px) {
+  .menu-section .section-heading {
+    --menu-plaque-width: 54%;
+    --menu-rule-gap: 12px;
+  }
+  .footer nav {
+    font-size: 14px;
+    gap: 10px;
+  }
+  .news-card {
+    margin-top: 18px;
+  }
+  .news-photo {
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .news-grid {
+    row-gap: 26px;
+  }
+  .ribbon {
+    top: -32px;
+    left: -3%;
+  }
+  .ribbon-label {
+    top: -22px;
+    left: 0;
+  }
+  .contact-row {
+    gap: 8px;
+  }
+  .contact-row > img {
+    width: 24px;
+    height: 24px;
+    flex-basis: 24px;
+  }
+  .socials img {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Узкие телефоны до 359 px. */
+@media (max-width: 359px) {
+  .menu-section .section-heading {
+    --menu-rule-gap: 8px;
+  }
+  .footer nav {
+    font-size: 13px;
+    gap: 9px;
+  }
+}
+
+/* Кадрирование слайдов: небольшое увеличение скрывает белые края исходных фото. */
+.slide-frame {
+  flex: 0 0 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+.slide-frame img[data-slide-index='2'],
+.slide-frame img[data-slide-index='4'] {
+  transform: scale(1.025);
+  transform-origin: center;
+}
+
+/* Телефоны до 720 px: первый хлеб крупнее, при этом сам хлеб помещается в кадре. */
+
+/* Телефоны до 720 px. */
+@media (max-width: 720px) {
+  .slide-frame img[data-slide-index='0'] {
+    transform: scale(1.6);
+    transform-origin: 50% 52%;
+  }
+}

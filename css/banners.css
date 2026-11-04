@@ -1,0 +1,650 @@
+/* banners.css: стили страницы; общие правила находятся в style.css.
+   Адаптивные настройки: ищите @media (планшет / телефон). */
+/* ====================================================================
+   СТРАНИЦА «БАННЕРЫ» — banners.css
+   Подключается ПОСЛЕ общего css/style.css.
+
+   .banners-page — класс body, ограничивающий стили этой страницей.
+   Общие цвета, шрифты, меню и кнопки берутся из style.css.
+
+   Как читать свойства:
+   font-size       — размер букв;
+   font-weight     — толщина букв (400 обычные, 600 полужирные, 900 жирные);
+   line-height     — высота строки относительно размера шрифта;
+   margin          — внешний отступ;
+   padding         — внутренний отступ;
+   gap             — расстояние между элементами Flex или Grid;
+   width / height  — ширина / высота;
+   grid-template-columns — число и пропорции колонок;
+   grid-column / grid-row — место элемента в сетке;
+   transform       — визуальный сдвиг без перестройки соседних элементов;
+   var(--pink)     — использование общей переменной цвета из style.css.
+
+   В записи padding: 12px 34px 0 0 порядок: верх, право, низ, лево.
+   В записи gap: 28px 24px: 28px между рядами, 24px между колонками.
+   clamp(минимум, гибкий размер, максимум) плавно меняет размер.
+
+   Общие правила действуют на всех экранах. Ниже блоки @media заменяют
+   только перечисленные свойства для планшета и телефона.
+   Значения и поведение исходного CSS сохранены.
+   ==================================================================== */
+
+/* ==================== ОБЩИЕ ПРАВИЛА / ОСНОВА ДЛЯ ПК ==================== */
+
+/* Основная область страницы: отступ сверху */
+.banners-page .banner-main {
+  padding-top: 24px;
+}
+
+/* Ссылка «Вернуться на главную» над заголовком */
+.banners-page .banner-breadcrumb {
+  display: inline-block;
+  padding-block: 8px;
+  font-size: 16px;
+}
+
+/* Цвет ссылки при наведении мыши */
+.banners-page .banner-breadcrumb:hover {
+  color: var(--pink);
+}
+
+/* Верхний блок: заголовок с описанием слева, счётчик работ справа */
+.banners-page .banner-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 8px 0 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--divider);
+}
+
+/* Большой розовый заголовок «バナーデザイン» */
+.banners-page .banner-intro h1 {
+  color: var(--pink);
+  font-family: var(--font-heading);
+  font-size: clamp(44px, 6.6vw, 96px);
+  font-weight: 900;
+  letter-spacing: -.045em;
+  line-height: 1.2;
+}
+
+/* Точка после большого заголовка */
+.banners-page .banner-period {
+  display: inline-block;
+  width: 0.3em;
+  height: 0.3em;
+  overflow: hidden;
+  line-height: 0;
+  border-radius: 50%;
+  background-color: var(--pink);
+  color: transparent;
+  margin-left: 0.2em;
+  vertical-align: -0.06em;
+}
+
+/* Описание под большим заголовком */
+.banners-page .banner-intro > div > p {
+  margin-top: 16px;
+  font-size: 18px;
+  border-radius: 50%;
+}
+
+/* Счётчик количества работ и вертикальная линия слева от него */
+.banners-page .banner-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 auto;
+  border-left: 1px solid var(--divider);
+  padding-left: 28px;
+}
+
+/* Крупное число работ — сейчас 16 */
+.banners-page .banner-count strong {
+  color: var(--pink);
+  font-size: 72px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Подпись WORKS под числом */
+.banners-page .banner-count span {
+  font-size: 18px;
+  margin-top: 8px;
+  letter-spacing: .08em;
+}
+
+/* Группа баннеров и разделительные линии */
+.banners-page .banner-section {
+  margin-top: 32px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--divider);
+}
+
+/* У последней группы разделитель не нужен */
+.banners-page .banner-section--long {
+  border-bottom: none;
+}
+/* Розовый заголовок группы со звёздочкой */
+.banners-page .banner-section .section-title {
+  font-size: 28px;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+/* Сетка карточек: число колонок и расстояния между ними */
+.banners-page .banner-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 28px 24px;
+}
+
+/* Одна работа: изображение вместе с подписью и стрелкой */
+.banners-page .banner-card {
+  display: block;
+  min-width: 0;
+}
+
+/* Изображение баннера: показываем полностью, сохраняя пропорции */
+.banners-page .banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--image-background);
+}
+
+/* Область с названием работы, размерами и стрелкой */
+.banners-page .banner-caption {
+  position: relative;
+  padding: 12px 34px 0 0;
+}
+
+/* Название конкретной работы под изображением или рядом с ним */
+.banners-page .banner-caption h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  transition: color .25s;
+}
+
+/* Подпись размеров изображения, например 1080 × 1080 px */
+.banners-page .banner-caption p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* Маленькая стрелка открытия работы */
+.banners-page .banner-arrow {
+  position: absolute;
+  right: 0;
+  top: 12px;
+  width: 24px;
+  height: 24px;
+  transition: transform .25s;
+}
+
+/* Название розовеет при наведении или выборе клавишей Tab */
+.banners-page .banner-card:hover h3, .banners-page .banner-card:focus-visible h3 {
+  color: var(--pink);
+}
+
+/* Стрелка слегка движется при наведении */
+.banners-page .banner-card:hover .banner-arrow {
+  transform: translate(3px, -3px);
+}
+
+/* Отдельная сетка для горизонтальных и длинных баннеров */
+.banners-page .banner-section--wide .banner-grid, .banners-page .banner-section--long .banner-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Сетка группы вертикальных баннеров */
+.banners-page .banner-section--portrait .banner-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Ограничиваем ширину вертикального баннера */
+.banners-page .banner-section--portrait .banner-card {
+  width: min(100%, 360px);
+}
+
+/* ==================== КНОПКА ВОЗВРАТА ==================== */
+.page-return .button img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+/* ==================== КНОПКА ВОЗВРАТА: ТЕЛЕФОН ==================== */
+
+@media (max-width: 600px) {
+
+  .page-return {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-top: -10px;
+  }
+
+}
+
+/* ==================== РОЗОВАЯ КАРТОЧКА КОНТАКТОВ ==================== */
+
+/* Белый текст слева, чёрная кнопка справа,
+   большая горизонтальная сакура по центру как фон */
+
+.banners-page .banner-contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2px 24px;
+  padding: 24px 32px;
+  border-radius: 18px;
+
+  background:
+    url("../images/decorations/sakura-horizontal.svg")
+    center center / 60% auto no-repeat,
+    var(--pink);
+
+  color: #fff;
+}
+
+/* Заголовок お問い合わせ — слева */
+
+.banners-page .banner-contact h2 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* Описание — слева под заголовком */
+
+.banners-page .banner-contact p {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+/* Чёрная кнопка — справа */
+
+.banners-page .banner-contact .button {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  justify-self: end;
+  margin: 0;
+}
+
+/* Расстояние перед подвалом с логотипом и городом */
+.banners-page .footer {
+  margin-top: 24px;
+}
+
+/* Внутренние отступы подвала */
+.banners-page .footer-inner {
+  padding-block: 20px;
+}
+
+/* Запрещаем прокрутку страницы, пока открыто увеличенное изображение */
+.banners-page:has(.banner-viewer[open]) {
+  overflow: hidden;
+}
+
+/* Всплывающее окно с увеличенным баннером */
+.banners-page .banner-viewer {
+  width: min(1100px, calc(100% - 24px));
+  max-height: calc(100dvh - 24px);
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--background);
+  color: var(--text);
+}
+
+/* Затемнение страницы за открытым окном */
+.banners-page .banner-viewer::backdrop {
+  background: rgb(0 0 0 / 85%);
+}
+
+/* Располагаем содержимое окна вертикально */
+.banners-page .viewer-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Верхняя строка окна и нижняя строка переключения работ */
+.banners-page .viewer-toolbar, .banners-page .viewer-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Название работы в верхней строке окна */
+.banners-page .viewer-toolbar h2 {
+  font-size: 18px;
+}
+
+/* Общие размеры и оформление кнопок в окне просмотра */
+.banners-page .banner-viewer button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  background: var(--surface);
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+/* Оформление кнопок окна при наведении */
+.banners-page .banner-viewer button:hover {
+  border-color: var(--pink);
+  color: var(--pink);
+}
+
+/* Крестик закрытия окна */
+.banners-page .viewer-close {
+  font-size: 28px;
+  line-height: 1;
+}
+
+/* Область увеличенного изображения: выравнивание по центру */
+.banners-page .viewer-image-wrap {
+  min-height: 0;
+  display: grid;
+  place-items: center;
+}
+
+/* Увеличенное изображение: ограничение размером экрана без обрезки */
+.banners-page .viewer-image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 240px);
+  object-fit: contain;
+}
+
+/* Номер текущей работы в окне, например 1 / 16 */
+.banners-page .viewer-position {
+  font-size: 14px;
+}
+
+/* Ссылка «Открыть исходное изображение» под переключателями */
+.banners-page .viewer-original {
+  color: var(--pink);
+  font-size: 14px;
+  align-self: center;
+  padding: 8px;
+}
+
+/* ==================== ПЛАНШЕТ: ШИРИНА 601–1024px ==================== */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  /* Верхний блок: заголовок с описанием слева, счётчик работ справа */
+  .banners-page .banner-intro {
+    gap: 16px;
+  }
+
+  /* Большой розовый заголовок «バナーデザイン» */
+  .banners-page .banner-intro h1 {
+    font-size: clamp(38px, 6.4vw, 68px);
+  }
+
+  /* Описание под большим заголовком */
+  .banners-page .banner-intro > div > p {
+    font-size: 15px;
+  }
+
+  /* Счётчик количества работ и вертикальная линия слева от него */
+  .banners-page .banner-count {
+    padding-left: 16px;
+  }
+
+  /* Крупное число работ — сейчас 16 */
+  .banners-page .banner-count strong {
+    font-size: 56px;
+  }
+
+  /* Подпись WORKS под числом */
+  .banners-page .banner-count span {
+    font-size: 14px;
+  }
+
+  /* Сетка карточек: число колонок и расстояния между ними */
+  .banners-page .banner-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 18px;
+  }
+
+  /* Отдельная сетка для горизонтальных и длинных баннеров */
+  .banners-page .banner-section--wide .banner-grid, .banners-page .banner-section--long .banner-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Сетка группы вертикальных баннеров */
+  .banners-page .banner-section--portrait .banner-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Название конкретной работы под изображением или рядом с ним */
+  .banners-page .banner-caption h3 {
+    font-size: 16px;
+  }
+
+  /* Розовая карточка контактов: текст слева, тёмная кнопка справа */
+  .banners-page .banner-contact {
+    padding: 20px;
+    gap: 4px 16px;
+  }
+
+  /* Размер заголовка и текста в розовой карточке */
+  .banners-page .banner-contact h2, .banners-page .banner-contact p {
+    font-size: 17px;
+  }
+}
+
+/* ==================== ТЕЛЕФОН: ШИРИНА ДО 600px, ВКЛЮЧАЯ УЗКИЕ ЭКРАНЫ ==================== */
+@media (max-width: 600px) {
+
+  /* Основная область страницы: отступ сверху */
+  .banners-page .banner-main {
+    padding-top: 12px;
+  }
+
+  /* Ссылка «Вернуться на главную» над заголовком */
+  .banners-page .banner-breadcrumb {
+    font-size: 14px;
+  }
+
+  /* Верхний блок: заголовок с описанием слева, счётчик работ справа */
+  .banners-page .banner-intro {
+    align-items: flex-start;
+    gap: 10px;
+    margin: 12px 0 24px;
+  }
+
+  /* Левая часть верхнего блока: разрешаем ей сжиматься */
+  .banners-page .banner-intro > div {
+    min-width: 0;
+  }
+
+  /* Большой розовый заголовок «バナーデザイン» */
+  .banners-page .banner-intro h1 {
+    font-size: clamp(26px, 6.5vw, 42px);
+  }
+
+  /* Описание под большим заголовком */
+  .banners-page .banner-intro > div > p {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* Счётчик количества работ и вертикальная линия слева от него */
+  .banners-page .banner-count {
+    padding-left: 10px;
+  }
+
+  /* Крупное число работ — сейчас 16 */
+  .banners-page .banner-count strong {
+    font-size: 36px;
+  }
+
+  /* Подпись WORKS под числом */
+  .banners-page .banner-count span {
+    font-size: 10px;
+    margin-top: 4px;
+  }
+
+  /* Группа баннеров: квадратные, прямоугольные и другие */
+  .banners-page .banner-section {
+    margin-top: 28px;
+  }
+
+  /* Розовый заголовок группы со звёздочкой */
+  .banners-page .banner-section .section-title {
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+
+  /* Сетка всех групп на телефоне: одна карточка в строке */
+  .banners-page .banner-section .banner-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  /* Одна работа: изображение вместе с подписью и стрелкой */
+  .banners-page .banner-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+    width: 100%;
+  }
+  /* Вертикальные баннеры — стрелка рядом с текстом */
+  .banners-page .banner-section--portrait .banner-caption {
+    justify-self: start;
+    padding-right: 5px;
+  }
+
+  .banners-page .banner-section--portrait .banner-arrow {
+    right: 0;
+  }
+  /* Область с названием работы, размерами и стрелкой */
+  .banners-page .banner-caption {
+    align-self: stretch;
+    min-width: 0;
+    padding: 0 0 30px;
+  }
+
+  /* Название конкретной работы под изображением или рядом с ним */
+  .banners-page .banner-caption h3 {
+    font-size: 14px;
+  }
+
+  /* Подпись размеров изображения, например 1080 × 1080 px */
+  .banners-page .banner-caption p {
+    font-size: 12px;
+  }
+
+  /* Маленькая стрелка открытия работы */
+  .banners-page .banner-arrow {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    width: 22px;
+    height: 22px;
+  }
+
+  /* На телефоне у широких баннеров подпись остаётся под картинкой */
+  .banners-page .banner-section--wide .banner-card, .banners-page .banner-section--long .banner-card {
+    display: block;
+  }
+
+  /* Отступы подписей у широких баннеров на телефоне */
+  .banners-page .banner-section--wide .banner-caption, .banners-page .banner-section--long .banner-caption {
+    padding: 10px 30px 0 0;
+  }
+
+  /* Положение стрелки у широких баннеров на телефоне */
+  .banners-page .banner-section--wide .banner-arrow, .banners-page .banner-section--long .banner-arrow {
+    top: 10px;
+    bottom: auto;
+  }
+
+  /* Обёртка кнопки возврата на главную внизу страницы */
+  .banners-page .banner-return {
+    padding: 32px 0 24px;
+  }
+
+  /* Размер и надпись кнопки возврата на главную */
+  .banners-page .banner-return .button {
+    min-height: 44px;
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  /* Розовая карточка контактов: текст слева, тёмная кнопка справа */
+  .banners-page .banner-contact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 12px;
+    padding: 16px 12px;
+    border-radius: 12px;
+  }
+
+  /* Заголовок «お問い合わせ» в розовой карточке */
+  .banners-page .banner-contact h2 {
+    font-size: 17px;
+  }
+
+  /* Текст «お気軽にご連絡ください。» в розовой карточке */
+  .banners-page .banner-contact p {
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  /* Тёмная кнопка «メッセージを送る» внутри розовой карточки */
+  .banners-page .banner-contact .button {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    font-size: 14px;
+    padding: 10px 8px;
+    gap: 6px;
+  }
+
+  /* Стрелка внутри тёмной кнопки */
+  .banners-page .banner-contact .button img {
+    width: 20px;
+    height: 18px;
+  }
+
+  /* Расстояние перед подвалом с логотипом и городом */
+  .banners-page .footer {
+    margin-top: 24px;
+  }
+
+  /* Название работы в верхней строке окна */
+  .banners-page .viewer-toolbar h2 {
+    font-size: 15px;
+  }
+  /* ТЕЛЕФОН — убираем ветку сакуры с карточки контактов */
+@media (max-width: 600px) {
+  body.banners-page .contact-card.banner-contact {
+    background-image: none !important;
+  }
+}
+
+}
+
+/* ==================== ЕСЛИ В НАСТРОЙКАХ УСТРОЙСТВА УМЕНЬШЕНО ДВИЖЕНИЕ ==================== */
+@media (prefers-reduced-motion: reduce) {
+
+  /* Стрелка слегка движется при наведении */
+  .banners-page .banner-card:hover .banner-arrow {
+    transform: none;
+  }
+}

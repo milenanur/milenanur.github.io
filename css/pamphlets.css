@@ -1,0 +1,405 @@
+/* pamphlets.css: стили страницы; общие правила находятся в style.css.
+   Адаптивные настройки: ищите @media (планшет / телефон). */
+/* ==========================================================
+   ПАМФЛЕТЫ — pamphlets.css
+   Только для страницы pamphlets.html
+   Общие настройки находятся в style.css
+   ========================================================== */
+/* ==========================================================
+   ПК — ОСНОВНЫЕ НАСТРОЙКИ
+   ========================================================== */
+/* ==================== ОСНОВНАЯ ЧАСТЬ ==================== */
+.pamphlets-page .pamphlet-main {
+  padding-top: 24px;
+}
+/* ==================== ССЫЛКА НАЗАД ==================== */
+.pamphlets-page .pamphlet-breadcrumb {
+  display: inline-block;
+  padding-block: 8px;
+  font-size: 16px;
+}
+.pamphlets-page .pamphlet-breadcrumb:hover {
+  color: var(--pink);
+}
+/* ==================== ПЕРВЫЙ ЭКРАН ==================== */
+/* Общий блок заголовка */
+.pamphlets-page .pamphlet-intro {
+  margin: 8px 0 40px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--divider);
+}
+/* Главный заголовок */
+.pamphlets-page .pamphlet-intro h1 {
+  color: var(--pink);
+  font-family: var(--font-heading);
+  font-size: clamp(50px, 6.6vw, 96px);
+  font-weight: 900;
+  letter-spacing: -.045em;
+  line-height: 1.12;
+}
+/* Строка заголовка */
+.pamphlets-page .pamphlet-title-line {
+  display: block;
+}
+/* Описание под заголовком */
+.pamphlets-page .pamphlet-intro > p {
+  margin-top: 16px;
+  font-size: 18px;
+}
+/* Розовая точка */
+.pamphlets-page .pamphlet-intro .dot {
+  margin-left: .14em;
+}
+/* ==================== ЗАГОЛОВОК РАБОТ ==================== */
+/* 制作実績 */
+.pamphlets-page .pamphlet-works > .section-title {
+  margin-bottom: 28px;
+}
+/* ==================== СЕТКА КАРТОЧЕК ==================== */
+/* Две карточки в строке */
+.pamphlets-page .pamphlet-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px 40px;
+  align-items: start;
+}
+/* Отдельная карточка */
+.pamphlets-page .pamphlet-card {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+}
+/* ==================== ИЗОБРАЖЕНИЯ ==================== */
+/* Миниатюры 1202 × 896: сохраняем пропорции, не растягиваем */
+.pamphlets-page .pamphlet-card .pamphlet-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1202 / 896;
+  object-fit: contain;
+  background: var(--image-background);
+}
+/* ==================== ПОДПИСИ К КАРТОЧКАМ ==================== */
+/* Блок подписи и стрелки */
+.pamphlets-page .pamphlet-caption {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 2px 0;
+}
+/* Текстовая часть */
+.pamphlets-page .pamphlet-description {
+  min-width: 0;
+}
+/* Название работы */
+.pamphlets-page .pamphlet-caption h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  transition: color .25s;
+}
+/* Описание работы */
+.pamphlets-page .pamphlet-caption p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+/* ==================== СТРЕЛКА КАРТОЧКИ ==================== */
+.pamphlets-page .pamphlet-arrow {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  margin-top: 4px;
+  transition: transform .25s;
+}
+/* Название розовеет при наведении */
+.pamphlets-page .pamphlet-card:hover h3,
+.pamphlets-page .pamphlet-card:focus-visible h3 {
+  color: var(--pink);
+}
+/* Стрелка двигается при наведении */
+.pamphlets-page .pamphlet-card:hover .pamphlet-arrow {
+  transform: translate(3px, -3px);
+}
+/* ==================== КАРТОЧКА КОНТАКТОВ ==================== */
+/* Розовый блок — как на странице баннеров */
+.pamphlets-page .pamphlet-contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2px 24px;
+  padding: 24px 32px;
+  border-radius: 18px;
+  /* Горизонтальная сакура — фон по центру, 60% */
+  background:
+    url("../images/decorations/sakura-horizontal.svg")
+    center center / 60% auto no-repeat,
+    var(--pink);
+  color: #fff;
+}
+/* Белый заголовок слева */
+.pamphlets-page .pamphlet-contact h2 {
+  grid-column: 1;
+  grid-row: 1;
+}
+/* Белое описание слева */
+.pamphlets-page .pamphlet-contact p {
+  grid-column: 1;
+  grid-row: 2;
+}
+/* Чёрная кнопка справа */
+.pamphlets-page .pamphlet-contact .button {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  justify-self: end;
+  margin: 0;
+}
+/* ==================== ПОДВАЛ ==================== */
+.pamphlets-page .footer {
+  margin-top: 24px;
+}
+.pamphlets-page .footer-inner {
+  padding-block: 20px;
+}
+/* ==========================================================
+   УВЕЛИЧЕННЫЙ ПРОСМОТР ПАМФЛЕТОВ
+   ========================================================== */
+/* Блокировка прокрутки при открытом окне */
+.pamphlets-page:has(.pamphlet-viewer[open]) {
+  overflow: hidden;
+}
+/* ==================== ОКНО ПРОСМОТРА ==================== */
+.pamphlets-page .pamphlet-viewer {
+  width: min(1100px, calc(100% - 24px));
+  max-height: calc(100dvh - 24px);
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--background);
+  color: var(--text);
+}
+/* Затемнение страницы */
+.pamphlets-page .pamphlet-viewer::backdrop {
+  background: rgb(0 0 0 / 85%);
+}
+/* ==================== СОДЕРЖИМОЕ ОКНА ==================== */
+.pamphlets-page .viewer-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+/* Верхняя панель и управление */
+.pamphlets-page .viewer-toolbar,
+.pamphlets-page .viewer-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+/* Заголовок окна */
+.pamphlets-page .viewer-toolbar h2 {
+  font-size: 18px;
+}
+/* ==================== КНОПКИ ПРОСМОТРА ==================== */
+.pamphlets-page .pamphlet-viewer button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  background: var(--surface);
+  cursor: pointer;
+  padding: 8px 12px;
+}
+/* Наведение на кнопки */
+.pamphlets-page .pamphlet-viewer button:hover {
+  border-color: var(--pink);
+  color: var(--pink);
+}
+/* Кнопка закрытия */
+.pamphlets-page .viewer-close {
+  font-size: 28px;
+  line-height: 1;
+}
+/* ==================== БОЛЬШОЕ ИЗОБРАЖЕНИЕ ==================== */
+/* Контейнер изображения */
+.pamphlets-page .viewer-image-wrap {
+  min-height: 0;
+  display: grid;
+  place-items: center;
+}
+/* Размер увеличенной картинки */
+.pamphlets-page .viewer-image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 240px);
+  object-fit: contain;
+}
+/* ==================== ДОПОЛНИТЕЛЬНЫЕ ЭЛЕМЕНТЫ ==================== */
+/* Номер изображения */
+.pamphlets-page .viewer-position {
+  font-size: 14px;
+}
+/* Ссылка на оригинал */
+.pamphlets-page .viewer-original {
+  color: var(--pink);
+  font-size: 14px;
+  align-self: center;
+  padding: 8px;
+}
+/* ==========================================================
+   ПЛАНШЕТ — 601px–1024px
+   ========================================================== */
+@media (min-width: 601px) and (max-width: 1024px) {
+  /* ==================== ПЕРВЫЙ ЭКРАН ==================== */
+  .pamphlets-page .pamphlet-intro h1 {
+    font-size: clamp(38px, 6.8vw, 68px);
+  }
+  .pamphlets-page .pamphlet-intro > p {
+    font-size: 15px;
+  }
+  /* ==================== КАРТОЧКИ ==================== */
+  .pamphlets-page .pamphlet-grid {
+    gap: 28px 22px;
+  }
+  /* Название работы */
+  .pamphlets-page .pamphlet-caption h3 {
+    font-size: 16px;
+  }
+  /* Описание работы */
+  .pamphlets-page .pamphlet-caption p {
+    font-size: 12px;
+  }
+  /* ==================== КОНТАКТЫ ==================== */
+  .pamphlets-page .pamphlet-contact {
+    padding: 20px;
+    gap: 4px 16px;
+  }
+  .pamphlets-page .pamphlet-contact h2,
+  .pamphlets-page .pamphlet-contact p {
+    font-size: 17px;
+  }
+}
+/* ==========================================================
+   ТЕЛЕФОН — ДО 600px
+   ========================================================== */
+@media (max-width: 600px) {
+  /* ==================== ОСНОВНАЯ ЧАСТЬ ==================== */
+  .pamphlets-page .pamphlet-main {
+    padding-top: 12px;
+  }
+  /* ==================== ССЫЛКА НАЗАД ==================== */
+  .pamphlets-page .pamphlet-breadcrumb {
+    font-size: 14px;
+  }
+  /* ==================== ПЕРВЫЙ ЭКРАН ==================== */
+  .pamphlets-page .pamphlet-intro {
+    margin: 12px 0 24px;
+    padding-bottom: 16px;
+  }
+  /* Главный заголовок */
+  .pamphlets-page .pamphlet-intro h1 {
+    font-size: clamp(27px, 7.3vw, 43px);
+    line-height: 1.2;
+  }
+  /* Описание */
+  .pamphlets-page .pamphlet-intro > p {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  /* ==================== ЗАГОЛОВОК РАБОТ ==================== */
+  .pamphlets-page .pamphlet-works > .section-title {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+  /* ==================== СЕТКА КАРТОЧЕК ==================== */
+  /* Одна карточка в строке */
+  .pamphlets-page .pamphlet-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+  /* Картинка слева, текст справа */
+  .pamphlets-page .pamphlet-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+    gap: 10px;
+    align-items: start;
+  }
+  /* ==================== ИЗОБРАЖЕНИЕ ==================== */
+  /* ==================== ПОДПИСИ ==================== */
+  .pamphlets-page .pamphlet-caption {
+    align-self: stretch;
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 75px;
+    gap: 12px;
+  }
+  /* Название работы */
+  .pamphlets-page .pamphlet-caption h3 {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  /* Описание работы */
+  .pamphlets-page .pamphlet-caption p {
+    font-size: 10px;
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+  /* ==================== СТРЕЛКА КАРТОЧКИ ==================== */
+  .pamphlets-page .pamphlet-arrow {
+    align-self: flex-end;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    flex-basis: 20px;
+  }
+  /* ==================== КОНТАКТЫ ==================== */
+  .pamphlets-page .pamphlet-contact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 12px;
+    padding: 16px 12px;
+    border-radius: 12px;
+    background-image: none; /* Как на странице баннеров: на телефоне сакура скрыта */
+  }
+  /* Заголовок */
+  .pamphlets-page .pamphlet-contact h2 {
+    font-size: 17px;
+  }
+  /* Описание */
+  .pamphlets-page .pamphlet-contact p {
+    font-size: 13px;
+    font-weight: 400;
+  }
+  /* Кнопка контактов */
+  .pamphlets-page .pamphlet-contact .button {
+    min-width: 0;
+    width: 100%;
+    min-height: 48px;
+    padding: 10px 8px;
+    gap: 6px;
+    font-size: 14px;
+  }
+  /* Иконка кнопки */
+  .pamphlets-page .pamphlet-contact .button img {
+    width: 20px;
+    height: 18px;
+  }
+  /* ==================== ОКНО ПРОСМОТРА ==================== */
+  .pamphlets-page .viewer-toolbar h2 {
+    font-size: 15px;
+  }
+}
+/* ==========================================================
+   ДОСТУПНОСТЬ — УМЕНЬШЕНИЕ АНИМАЦИЙ
+   ========================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .pamphlets-page .pamphlet-card:hover .pamphlet-arrow {
+    transform: none;
+  }
+}

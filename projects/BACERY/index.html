@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bakery — свежая выпечка</title>
+    <meta name="description" content="Bakery — свежая выпечка, десерты и торты на заказ." />
+
+    <!-- Локальные шрифты и оформление страницы. -->
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main" data-i18n="skip">К содержимому</a>
+    <div class="site-shell">
+      <!-- Шапка сайта: логотип, языки и навигация. -->
+      <header class="header">
+        <div class="header-row">
+          <button
+            class="burger"
+            id="burger"
+            type="button"
+            aria-label="Открыть меню"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <a class="brand" href="#top" aria-label="Bakery">
+            <img class="brand-ear" src="image/decorations/ear1.png" alt="" />
+            <img class="logo" src="image/decorations/Logo.svg" alt="Bakery" />
+            <img class="brand-ear" src="image/decorations/ear1.png" alt="" />
+          </a>
+          <div class="languages" aria-label="Язык / 言語">
+            <button type="button" data-language="ru" aria-pressed="true">RU</button>
+            <span>/</span>
+            <button type="button" data-language="ja" aria-pressed="false">JP</button>
+          </div>
+        </div>
+        <nav class="desktop-nav" aria-label="Основная навигация">
+          <a href="#about" data-i18n="about">О нас</a>
+          <i>•</i>
+          <a href="#news" data-i18n="news">Новости</a>
+          <i>•</i>
+          <a href="#menu" data-i18n="menu">Меню</a>
+          <i>•</i>
+          <a href="#contacts" data-i18n="contacts">Контакты</a>
+        </nav>
+      </header>
+
+      <!-- Выдвижное меню для телефона. -->
+      <dialog class="menu-dialog" id="mobile-menu" aria-labelledby="menu-title">
+        <div class="menu-top">
+          <button class="close-menu" id="close-menu" type="button" aria-label="Закрыть меню">
+            ×
+          </button>
+          <a href="#top" class="menu-brand">
+            <img src="image/decorations/Logo.svg" alt="Bakery" />
+          </a>
+          <div class="languages">
+            <button type="button" data-language="ru" aria-pressed="true">RU</button>
+            <span>/</span>
+            <button type="button" data-language="ja" aria-pressed="false">JP</button>
+          </div>
+        </div>
+        <div class="menu-paper">
+          <img class="menu-ornament" src="image/decorations/ear3.png" alt="" />
+          <p class="menu-eyebrow" id="menu-title" data-i18n="welcome">Добро пожаловать</p>
+          <nav class="mobile-nav" aria-label="Навигация">
+            <a href="#about">
+              <span data-i18n="about">О нас</span>
+              <span class="nav-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="#menu">
+              <span data-i18n="ourMenu">Наше меню</span>
+              <span class="nav-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="#news">
+              <span data-i18n="news">Новости</span>
+              <span class="nav-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="#contacts">
+              <span data-i18n="contacts">Контакты</span>
+              <span class="nav-arrow" aria-hidden="true">↗</span>
+            </a>
+          </nav>
+          <button class="order-button menu-order" type="button" data-order>
+            <span data-i18n="order">Сделать заказ</span>
+            <span class="button-arrow" aria-hidden="true"></span>
+          </button>
+          <p class="menu-signature" data-i18n="love">Испечено с любовью</p>
+          <img class="menu-bottom-ornament" src="image/decorations/ear3.png" alt="" />
+        </div>
+      </dialog>
+      <main id="main">
+        <!-- Первый экран со слайдером и баннером. -->
+        <section class="hero" id="top" aria-label="Свежая выпечка">
+          <div class="slider" aria-roledescription="carousel">
+            <div class="slider-track" id="hero-track">
+              <div class="slide-frame">
+                <img
+                  id="hero-image"
+                  src="image/foto/bred.webp"
+                  alt="Свежий хлеб с хрустящей корочкой"
+                  fetchpriority="high"
+                  width="1920"
+                  height="1280"
+                />
+              </div>
+            </div>
+            <button class="slide-arrow previous" type="button" aria-label="Предыдущий слайд">
+              <span class="slide-chevron" aria-hidden="true"></span>
+            </button>
+            <button class="slide-arrow next" type="button" aria-label="Следующий слайд">
+              <span class="slide-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="dots" id="dots"></div>
+            <button
+              class="slider-toggle"
+              type="button"
+              aria-label="Приостановить слайдер"
+              aria-pressed="false"
+            >
+              <span aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="special-order">
+            <img
+              src="image/decorations/bakery_special_order.svg"
+              alt="Специальный заказ. Ароматная выпечка и десерты по вашему заказу"
+              id="special-ru"
+            />
+            <img
+              id="special-jp"
+              src="image/decorations/bakery_special_order_jp.svg"
+              alt="オーダーメイド。香り豊かなパンやスイーツをご注文に合わせてお作りします。"
+              hidden
+            />
+          </div>
+        </section>
+
+        <!-- О пекарне. -->
+        <section class="about content" id="about">
+          <div class="badges">
+            <img
+              src="image/decorations/icon1.svg"
+              alt="Sweet — made with love"
+              width="290"
+              height="290"
+            />
+            <img src="image/decorations/icon2.svg" alt="Cakes" width="290" height="290" />
+            <img
+              src="image/decorations/icon3.svg"
+              alt="Bakery — always fresh"
+              width="290"
+              height="290"
+            />
+          </div>
+          <div class="slogan">
+            <img src="image/decorations/ear2.png" alt="" />
+            <h1 data-i18n-html="slogan">
+              Выпечка —
+              <em>это</em>
+              вкусно.
+            </h1>
+            <img src="image/decorations/ear2.png" alt="" />
+          </div>
+          <p class="intro" data-i18n="intro">
+            Каждый день мы создаём свежую, ароматную выпечку с любовью к традициям и вниманием к
+            каждой детали. Хрустящий хлеб, нежные десерты и торты на заказ — всё, чтобы радовать вас
+            и ваших близких. Подарите себе немного тепла и удовольствия с Bakery!
+          </p>
+        </section>
+
+        <!-- Карточки меню создаются в js/main.js для выбранного языка. -->
+        <section class="content menu-section" id="menu">
+          <h2 class="section-heading">
+            <img src="image/decorations/menu_ru.png" alt="" data-heading="menu" />
+            <span class="sr-only" data-i18n="ourMenu">Наше меню</span>
+          </h2>
+          <div class="products" id="products"></div>
+        </section>
+
+        <!-- Новости и кнопка заказа. -->
+        <section class="content news-section" id="news">
+          <h2 class="section-heading">
+            <img src="image/decorations/news.png" alt="" data-heading="news" />
+            <span class="sr-only" data-i18n="news">Новости</span>
+          </h2>
+          <div class="news-grid" id="news-grid"></div>
+          <button class="order-button page-order" type="button" data-order>
+            <span data-i18n="orderShort">Заказать</span>
+            <span class="button-arrow" aria-hidden="true"></span>
+          </button>
+        </section>
+
+        <!-- Карта, контакты и соцсети. Данные берутся из js/config.js. -->
+        <section class="content contacts-section" id="contacts">
+          <h2 class="section-heading">
+            <img src="image/decorations/contact_ru.png" alt="" data-heading="contact" />
+            <span class="sr-only" data-i18n="contactHeading">Контакты</span>
+          </h2>
+          <div class="contacts-grid">
+            <div class="map-placeholder">
+              <img src="image/icons/icon_address.svg" alt="" />
+              <p data-i18n="mapPending">Карта появится после добавления адреса</p>
+            </div>
+            <div class="contact-details" id="contact-details"></div>
+            <img
+              class="shop-photo"
+              src="image/foto/bacery-shop.webp"
+              alt="Витрина пекарни Bakery"
+              loading="lazy"
+              width="1536"
+              height="1024"
+            />
+          </div>
+        </section>
+      </main>
+
+      <!-- Нижняя навигация и декоративные колосья. -->
+      <footer class="content footer">
+        <nav aria-label="Нижняя навигация">
+          <a href="#about" data-i18n="about">О нас</a>
+          <span>•</span>
+          <a href="#news" data-i18n="news">Новости</a>
+          <span>•</span>
+          <a href="#menu" data-i18n="menu">Меню</a>
+          <span>•</span>
+          <a href="#contacts" data-i18n="contacts">Контакты</a>
+        </nav>
+        <img src="image/decorations/ear3.png" alt="" />
+      </footer>
+    </div>
+    <button class="to-top" type="button" aria-label="Наверх" hidden>↑</button>
+
+    <!-- Окна заказа и уведомления о неподключённых соцсетях. -->
+    <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-title">
+      <button class="order-close" type="button" aria-label="Закрыть">×</button>
+      <h2 id="order-title" data-i18n="order">Сделать заказ</h2>
+      <p data-i18n="orderPending">
+        Онлайн-заказ пока не подключён. Контакты для заказа будут добавлены после подтверждения
+        владельцем.
+      </p>
+      <button class="order-button order-dismiss" type="button" data-i18n="close">Закрыть</button>
+    </dialog>
+    <dialog class="order-dialog" id="social-dialog" aria-labelledby="social-title">
+      <button class="order-close social-close" type="button" aria-label="Закрыть / 閉じる">
+        ×
+      </button>
+      <h2 id="social-title"></h2>
+      <p id="social-message"></p>
+      <button class="order-button social-close" type="button" data-i18n="close">Закрыть</button>
+    </dialog>
+
+    <!-- Сначала настройки, затем логика страницы. -->
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

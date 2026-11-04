@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64">
+  <!-- Generator: Adobe Illustrator 30.8.2, SVG Export Plug-In . SVG Version: 2.1.4 Build 7)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #4a2b1a;
+      }
+
+      .st1 {
+        fill: none;
+        stroke: #4a2b1a;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 5px;
+      }
+    </style>
+  </defs>
+  <rect class="st1" x="8.34" y="8.16" width="47.33" height="47.69" rx="12" ry="12"/>
+  <ellipse class="st1" cx="32" cy="32" rx="10.76" ry="10.84"/>
+  <ellipse class="st0" cx="45.97" cy="18.02" rx="3.37" ry="3.19"/>
+</svg>

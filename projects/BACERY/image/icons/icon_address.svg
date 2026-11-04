@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64">
+  <!-- Generator: Adobe Illustrator 30.8.2, SVG Export Plug-In . SVG Version: 2.1.4 Build 7)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+        stroke: #4a2b1a;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 4px;
+      }
+    </style>
+  </defs>
+  <path class="st0" d="M32,57.33c9.75-12.82,19.48-21.04,19.48-32.05,0-9.44-8.72-17.09-19.48-17.09S12.52,15.84,12.52,25.28c0,11,9.75,19.23,19.48,32.05Z"/>
+  <ellipse class="st0" cx="32" cy="25.35" rx="7.04" ry="6.48"/>
+</svg>

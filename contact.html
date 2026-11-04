@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<!-- ==========================================================
+     КОНТАКТЫ — японская версия (contact.html)
+     Тексты и ссылки редактируются здесь. Общие стили: css/style.css.
+     Стили страницы и скрипты подключены в разделе head.
+     ========================================================== -->
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Webデザイン・グラフィック制作・動画編集のご相談はこちらから。MILENA お問い合わせページ。" name="description"/>
+<title>
+   お問い合わせ | MILENA
+  </title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&amp;family=Noto+Sans+JP:wght@400;600;900&amp;family=Oswald:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/contact.css" rel="stylesheet"/>
+<script defer="" src="js/main.js">
+</script>
+<script defer="" src="js/contact.js">
+</script>
+</head>
+<body class="contact-page">
+<header class="header" id="top">
+<div class="container header-inner">
+<a aria-label="MILENA ホーム" class="logo" href="index.html">
+     MILENA
+    </a>
+<!-- Кнопка меню телефона -->
+<button aria-controls="main-navigation" aria-expanded="false" aria-label="メニューを開く" class="menu-button" hidden="" type="button">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</button>
+<!-- Основная навигация -->
+<nav aria-label="メインメニュー" class="navigation" id="main-navigation">
+<a class="mobile-only" href="index.html">
+      トップ
+     </a>
+<a class="navigation-works" href="index.html#works">
+      制作実績
+     </a>
+<div class="navigation-submenu mobile-only">
+<a href="index.html#websites">
+       Webサイト
+      </a>
+<a href="banners.html">
+       バナー
+      </a>
+<a href="pamphlets.html">
+       チラシ・パンフレット
+      </a>
+<a href="videos.html">
+       動画
+      </a>
+</div>
+<a href="about.html">
+      私について
+     </a>
+<a aria-current="page" href="contact.html">
+      お問い合わせ
+     </a>
+<!-- Русскую версию подключим позже -->
+<div class="navigation-language mobile-only">
+<a aria-current="page" class="language-jp" href="contact.html" lang="ja">
+       JP
+      </a>
+<span aria-hidden="true">
+       /
+      </span>
+<a class="language-ru" href="ru/contact.html" lang="ru">
+       RU
+      </a>
+</div>
+</nav>
+<div class="language">
+<a aria-current="page" class="language-jp" href="contact.html" lang="ja">
+      JP
+     </a>
+<span aria-hidden="true">
+      /
+     </span>
+<a class="language-ru" href="ru/contact.html" lang="ru">
+      RU
+     </a>
+</div>
+</div>
+</header>
+<main class="container contact-main">
+<a class="contact-breadcrumb" href="index.html">
+    ← トップに戻る
+   </a>
+<section aria-labelledby="contact-page-title" class="contact-intro">
+<p class="contact-eyebrow">
+     CONTACT
+    </p>
+<h1 id="contact-page-title">
+     お問い合わせ
+     <span aria-hidden="true" class="contact-period">
+      .
+     </span>
+</h1>
+<p class="contact-subtitle">
+     制作のご相談やお仕事のご依頼など、お気軽にご連絡ください。
+    </p>
+</section>
+<div class="contact-layout">
+<section aria-labelledby="contact-message-title" class="contact-message">
+<h2 class="section-title" id="contact-message-title">
+      ご相談内容をお聞かせください
+     </h2>
+<p>
+      Webデザイン・グラフィック制作・
+      <br class="contact-desktop-break"/>
+      動画編集についてもお気軽にご相談ください。
+     </p>
+<img alt="" class="contact-sakura" loading="lazy" src="images/decorations/sakura-vertical.svg"/>
+</section>
+<section aria-label="お問い合わせフォーム" class="contact-form-section">
+<form action="https://formspree.io/f/mvkkdrrw" method="POST" class="contact-form" id="contact-form">
+<div class="contact-field">
+<label for="contact-name">
+        お名前
+        <span class="required">
+         必須
+        </span>
+</label>
+<input autocomplete="name" id="contact-name" maxlength="100" name="name" required="" type="text"/>
+</div>
+<div class="contact-field">
+<label for="contact-email">
+        メールアドレス
+        <span class="required">
+         必須
+        </span>
+</label>
+<input autocomplete="email" id="contact-email" maxlength="254" name="email" required="" type="email"/>
+</div>
+<div class="contact-field">
+<label for="contact-message">
+        お問い合わせ内容
+        <span class="required">
+         必須
+        </span>
+</label>
+<textarea id="contact-message" maxlength="5000" name="message" required="" rows="8"></textarea>
+</div>
+<p class="contact-privacy">
+       ご入力いただいた個人情報は、お問い合わせへの対応にのみ使用します。
+      </p>
+<div class="contact-actions">
+<button class="button button-pink contact-submit" type="submit">
+       送信する
+       <img alt="" src="images/icons/arrow-right.svg"/>
+</button>
+<div class="contact-social" aria-label="またはSNSでご連絡ください">
+  <span class="contact-social-label">またはSNSでご連絡ください</span>
+  <div class="contact-social-links">
+    <a class="contact-social-link" href="https://lin.ee/yicJk98" target="_blank" rel="noopener noreferrer" aria-label="Line" title="Line"><img src="images/icons/line.svg" alt="" width="48" height="48"/></a>
+<a class="contact-social-link" href="https://t.me/MilenaNur" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram"><img src="images/icons/telegram.svg" alt="" width="48" height="48"/></a>
+<a class="contact-social-link" href="https://vk.ru/club242932789" target="_blank" rel="noopener noreferrer" aria-label="VK" title="VK"><img src="images/icons/vk-svgrepo-com.svg" alt="" width="48" height="48"/></a>
+  </div>
+</div>
+</div>
+
+<p aria-live="polite" class="contact-form-status" id="contact-form-status" role="status">
+</p>
+</form>
+</section>
+</div>
+<div class="page-return">
+<a class="button button-outline button-top" href="#top">
+     ページの先頭へ
+     <img alt="" src="images/icons/arrow-up.svg"/>
+</a>
+</div>
+</main>
+<footer class="footer">
+<div class="container footer-inner">
+<a class="logo" href="index.html">
+     MILENA
+    </a>
+<p class="footer-location">
+<img alt="" src="images/icons/map-pin-white.svg"/>
+<span>
+      神戸、日本
+     </span>
+</p>
+</div>
+</footer>
+</body>
+</html>

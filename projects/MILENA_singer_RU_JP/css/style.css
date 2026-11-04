@@ -1,0 +1,1377 @@
+/* Главная страница — объединённые окончательные стили. */
+/* Размеры экранов указаны в блоках @media в конце файла. */
+/* Основная компоновка, цвета, элементы интерфейса */
+h1,h2,h3 {
+  font-weight: 600;
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+h1 {
+  font-size: clamp(36px,4.2vw,60px);
+}
+h2 {
+  font-size: clamp(28px,3.3vw,48px);
+}
+p+p {
+  margin-top: 18px;
+}
+.container {
+  width: min(var(--content),calc(100% - 80px));
+  margin-inline: auto;
+}
+section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.section-inner {
+  position: relative;
+  z-index: 1;
+}
+.surface {
+  background: var(--surface);
+}
+.button {
+  border: 0;
+  border-radius: 999px;
+  background: var(--orange);
+  color: white;
+  padding: 15px 34px;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 3px 3px #0002;
+  transition: transform .2s,filter .2s;
+}
+.button:hover {
+  filter: brightness(.94);
+  transform: translateY(-2px);
+}
+button:focus-visible,a:focus-visible {
+  outline: 3px solid #225bb2;
+  outline-offset: 5px;
+}
+.decor {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: 250px;
+  right: -75px;
+  top: 35px;
+}
+.index-page {
+  background: white;
+}
+.index-page .header {
+  background: var(--surface);
+}
+.index-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: var(--surface);
+  z-index: -1;
+}
+.logo {
+  width: 220px;
+  flex-shrink: 0;
+}
+.logo img {
+  width: 100%;
+}
+.desktop-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 45px;
+  align-items: center;
+}
+.desktop-nav a,.desktop-nav button,.footer nav a,.footer nav button {
+  font-size: 14px;
+  font-weight: 600;
+}
+.desktop-nav button,.footer nav button,.languages button {
+  border: 0;
+  padding: 0;
+  background: none;
+}
+.desktop-nav a:hover,.desktop-nav button:hover {
+  color: var(--orange);
+}
+.languages {
+  font-size: 13px;
+  white-space: nowrap;
+}
+.languages span {
+  border-bottom: 2px solid var(--orange);
+  padding-bottom: 4px;
+}
+.menu-toggle {
+  display: none;
+}
+.socials img {
+  max-height: 22px;
+}
+.footer {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+.footer .logo {
+  width: 185px;
+}
+.footer nav {
+  display: flex;
+  gap: 35px;
+}
+.back-link {
+  display: inline-block;
+  color: #6c6c6c;
+  font-size: 15px;
+  margin: 22px 0 30px;
+}
+.content-photo {
+  width: 100%;
+  max-height: 510px;
+  object-fit: contain;
+}
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 65px;
+  padding-block: 55px;
+}
+.split h2 {
+  margin-bottom: 24px;
+}
+.split .copy {
+  position: relative;
+  z-index: 1;
+}
+.split .button {
+  margin-top: 28px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.notice {
+  position: fixed;
+  bottom: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: white;
+  border-radius: 12px;
+  padding: 16px 24px;
+  z-index: 100;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  font-size: 14px;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 55px;
+  align-items: center;
+  min-height: 650px;
+  padding-bottom: 35px;
+}
+.hero-art .blob {
+  inset: 20% 3% 25%;
+}
+.hero-copy {
+  position: relative;
+  z-index: 1;
+}
+.hero-copy .socials {
+  margin-bottom: 18px;
+}
+.hero-copy .lead {
+  font-weight: 700;
+  max-width: 340px;
+  margin-top: 10px;
+}
+.hero-copy .intro {
+  max-width: 440px;
+  margin-top: 12px;
+}
+.hero-cta {
+  margin-top: 35px;
+}
+.hero > .decor {
+  top: 150px;
+  right: 12%;
+  width: 220px;
+}
+.directions {
+  padding: 45px 0 50px;
+}
+/* Два декоративных кольца в секции направлений */
+.directions > .directions-ring-left {
+  position: absolute;
+  left: -40px;
+  right: auto;
+  top: 45%;
+  width: 200px;
+  z-index: 0;
+}
+.directions > .decor:last-child {
+  position: absolute;
+  left: auto;
+  right: -60px;
+  top: 35%;
+  width: 200px;
+  z-index: 0;
+}
+/* Заголовок и карточки находятся над кольцами */
+.directions .section-inner {
+  position: relative;
+  z-index: 1;
+}
+.directions h2 {
+  margin-bottom: 35px;
+}
+.lesson-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.lesson-card {
+  height: 360px;
+  border-radius: 8px;
+  box-shadow: 0 4px 3px #0003;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.lesson-card h3 {
+  writing-mode: vertical-rl;
+  font-size: 28px;
+  max-height: 90%;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  bottom: auto;
+  margin: 0;
+  transform: translateY(-50%);
+  text-align: center;
+  z-index: 1;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+.vocal {
+  background: var(--card);
+}
+.piano {
+  background: var(--orange);
+}
+.stage {
+  background: var(--blue);
+}
+.stage img {
+  width: 70%;
+  height: 70%;
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 35px;
+}
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding-left: 25px;
+  font-size: 15px;
+}
+.feature img {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+}
+.training-title {
+  position: relative;
+  min-height: 300px;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+.training-title > img {
+  position: absolute;
+  width: 260px;
+  left: 10%;
+  z-index: -1;
+}
+.training-title .striped {
+  width: 200px;
+  left: 0;
+  top: 125px;
+}
+.training .copy {
+  padding-block: 15px;
+}
+/* ========================================== БЛОК «ВАШ ПЕРВЫЙ ШАГ К МУЗЫКЕ» Фото начинается на уровне заголовка и заканчивается перед футером. ========================================== */
+/* Контактный блок — две колонки */
+.home-contact .split {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 40px;
+  align-items: start;
+  padding-block: 20px 0;
+}
+/* Контейнер фотографии */
+.home-contact .piano-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  border-radius: 0;
+}
+/* Фотография пианино */
+.home-contact .piano-contact {
+  display: block;
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  border-radius: 0;
+  /* Немного опускаем фотографию */
+  margin-top: 0;
+  transform: translateY(10px);
+}
+/* Заголовок начинается на уровне верхнего края фото */
+.home-contact .copy {
+  align-self: start;
+}
+/* Декоративное кольцо справа */
+.home-contact > .decor {
+  top: auto;
+  bottom: -120px;
+  right: 5%;
+}
+:root {
+  --white: #fff;
+  --surface: #f0f0f0;
+  --text: #000;
+  --orange: #f28b64;
+  --blue: #5290ea;
+  --card: #e2e2e2;
+  --content: 1140px;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: Montserrat,Arial,sans-serif;
+  color: var(--text);
+  background: var(--white);
+  font-size: 16px;
+  line-height: 1.4;
+  overflow-x: clip;
+}
+img {
+  max-width: 100%;
+}
+.header, .footer {
+  isolation: isolate;
+}
+.header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  position: relative;
+  z-index: 40;
+}
+.mobile-menu {
+  display: none;
+  z-index: 35;
+}
+section .container {
+  position: relative;
+  z-index: 1;
+}
+.back-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 15;
+  background: #fffdf5;
+  box-shadow: 0 2px 7px #0002;
+  border: 1px solid #e5e5e5;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+}
+.hero-art {
+  height: 640px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.hero-photo {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+.story .split {
+  min-height: 380px;
+}
+.story .photo-wrap {
+  min-width: 0;
+}
+.story .content-photo {
+  max-height: 390px;
+}
+.about-intro .content-photo {
+  max-height: 430px;
+}
+.lesson-intro .split {
+  align-items: center;
+}
+.lesson-intro .photo-wrap {
+  min-width: 0;
+}
+.lesson-intro .content-photo {
+  max-height: 410px;
+}
+.lesson-card img {
+  width: 75%;
+  height: 95%;
+  object-fit: contain;
+  object-position: left center;
+}
+.mobile-menu nav button {
+font-family: inherit;
+font-size: 18px;
+font-weight: 600;
+}
+.photo-wrap {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+}
+.photo-wrap .photo-ornament {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: 95%;
+  height: 85%;
+  top: 2%;
+  left: 0;
+  object-fit: contain;
+  transform: none;
+}
+.hero-art .photo-ornament {
+  width: 85%;
+  height: 80%;
+  left: 6%;
+  top: -10%;
+}
+.photo-wrap .content-photo,.photo-wrap .hero-photo {
+  position: relative;
+  z-index: 1;
+  object-fit: contain;
+}
+.photo-wrap > .decor {
+  z-index: -1;
+  pointer-events: none;
+}
+section .decor {
+  z-index: 0;
+  pointer-events: none;
+}
+.socials {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.socials button {
+  width: 40px;
+  height: 41px;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  display: block;
+  place-items: center;
+  flex: 0 0 40px;
+  box-shadow: none;
+}
+.socials button img {
+  display: block;
+  width: 40px;
+  height: 41px;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+}
+/* Адаптация: (max-width:1000px) */
+@media (max-width:1000px) {
+  .container {
+    width: calc(100% - 64px);
+  }
+  .header {
+    height: 85px;
+    gap: 22px;
+  }
+  .logo {
+    width: 160px;
+  }
+  .desktop-nav {
+    gap: 24px;
+  }
+  .desktop-nav a,.desktop-nav button {
+    font-size: 12px;
+  }
+  .split {
+    gap: 30px;
+  }
+  .footer nav {
+    gap: 20px;
+  }
+  .footer .logo {
+    width: 140px;
+  }
+  body {
+    font-size: 14px;
+  }
+  .photo-wrap .photo-ornament {
+    width: 100%;
+    left: 0;
+    top: 5%;
+  }
+}
+/* Адаптация: (max-width:600px) */
+/* Адаптация: (max-width: 1000px) */
+@media (max-width: 1000px) {
+  .hero-grid {
+    min-height: 440px;
+    gap: 25px;
+  }
+  .hero-art {
+    height: 440px;
+  }
+  .lesson-card {
+    height: 250px;
+  }
+  .lesson-card h3 {
+    font-size: 21px;
+  }
+  .feature {
+    padding: 0;
+    gap: 10px;
+    font-size: 12px;
+  }
+  .feature img {
+    width: 55px;
+  }
+  .hero-copy .socials {
+    margin-bottom: 10px;
+  }
+}
+/* Адаптация: (max-width: 600px) */
+/* Адаптация: (min-width:1001px) */
+@media (min-width:1001px) {
+  .hero-grid {
+    min-height: 590px;
+  }
+  .hero-art {
+    height: 570px;
+  }
+  .lesson-card {
+    height: 320px;
+  }
+  .features {
+    margin-top: 30px;
+  }
+  .story .split {
+    padding-block: 40px;
+  }
+  .index-page .hero {
+    overflow: hidden;
+  }
+  .index-page .hero-grid {
+    min-height: 730px;
+    padding-bottom: 0;
+    grid-template-columns: minmax(0,1.05fr) minmax(0,1fr);
+    align-items: center;
+  }
+  .index-page .hero-art {
+    height: 730px;
+    min-height: 730px;
+    align-self: end;
+    overflow: visible;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .index-page .hero-art .hero-photo {
+    width: auto;
+    height: 100%;
+    max-height: none;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    flex-shrink: 0;
+  }
+  .index-page .hero-art .photo-ornament {
+    height: 72%;
+    top: 3%;
+    left: 3%;
+    width: 94%;
+  }
+}
+/* Адаптация: (max-width:1000px) and (min-width:601px) */
+@media (max-width:1000px) and (min-width:601px) {
+  .container {
+    width: calc(100% - 48px);
+  }
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .hero-art {
+    height: 400px;
+  }
+  .lesson-cards {
+    gap: 14px;
+  }
+  .features {
+    gap: 12px;
+  }
+  .split {
+    gap: 24px;
+  }
+  h1 {
+    font-size: clamp(30px,4.5vw,46px);
+  }
+  h2 {
+    font-size: clamp(25px,3.5vw,38px);
+  }
+  .story .content-photo {
+    max-height: 350px;
+  }
+  .formats {
+    gap: 9px;
+  }
+  .formats img {
+    width: 56px;
+    height: 56px;
+  }
+}
+/* Адаптация: (max-width:359px) */
+@media (max-width:359px) {
+  .container {
+    width: calc(100% - 28px);
+  }
+  h1 {
+    font-size: 31px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  .formats {
+    gap: 5px;
+  }
+  .formats img {
+    width: 42px;
+    height: 42px;
+  }
+  .lesson-card h3 {
+    font-size: 16px;
+  }
+  .mobile-menu.is-open {
+    padding-inline: 18px;
+  }
+}
+/* Адаптация: (prefers-reduced-motion:reduce) */
+@media (prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .button,.contact-link {
+    transition: none;
+  }
+}
+/* Адаптация: (min-width:601px) and (max-width:1000px) */
+@media (min-width:601px) and (max-width:1000px) {
+  .index-page .hero-grid {
+    min-height: 570px;
+    padding-bottom: 0;
+  }
+  .index-page .hero-art {
+    height: 570px;
+    align-self: end;
+  }
+  .index-page .hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+  }
+}
+.scroll-down {
+  display: none;
+}
+/* ========================================================== ТЕЛЕФОН: МАКЕТ FIGMA 390px — единый мобильный блок ========================================================== */
+@media (max-width: 600px) {
+  /* Шапка и бургер-меню */
+  .container {
+    width: calc(100% - 40px);
+  }
+  body {
+    font-size: 14px;
+  }
+  .header {
+    height: 72px;
+    gap: 18px;
+    position: relative;
+    z-index: 40;
+  }
+  .logo {
+    width: 125px;
+  }
+  .desktop-nav {
+    display: none;
+  }
+  .languages {
+    margin-left: auto;
+    font-size: 11px;
+  }
+  .menu-toggle {
+    display: grid;
+    gap: 4px;
+    align-content: center;
+    width: 34px;
+    height: 40px;
+    padding: 8px;
+    border: 0;
+    background: none;
+  }
+  .menu-toggle span {
+    width: 20px;
+    height: 1px;
+    background: #000;
+    transition: transform .2s, opacity .2s;
+  }
+  .menu-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(5px) rotate(45deg);
+  }
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+  .mobile-menu button {
+    border: 0;
+    background: none;
+    padding: 0;
+  }
+  .mobile-menu .menu-contact {
+    color: #cb633f;
+  }
+  .mobile-menu .decor {
+    top: auto;
+    bottom: -60px;
+    right: -70px;
+  }
+  .mobile-menu.is-open {
+    display: block;
+    position: fixed;
+    inset: 72px 0 0;
+    z-index: 35;
+    padding: 24px 25px;
+    background: #fff8f6;
+    isolation: isolate;
+    overflow-y: auto;
+    max-height: calc(100dvh - 72px);
+  }
+  .mobile-menu nav {
+    display: grid;
+    gap: 20px;
+    justify-items: start;
+  }
+  .mobile-menu nav a, .mobile-menu nav button {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .mobile-menu nav button {
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;   
+  }
+  /* Общие мобильные компоненты */
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 29px;
+  }
+  .split {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-block: 40px;
+    text-align: center;
+  }
+  .split h2 {
+    margin-bottom: 20px;
+  }
+  .content-photo {
+    max-height: 350px;
+  }
+  .back-link {
+    margin: 12px 0 24px;
+  }
+  .back-top {
+    width: 38px;
+    height: 38px;
+    right: 14px;
+    bottom: 14px;
+  }
+
+
+
+
+
+
+  /* Первый экран: оставляем уже согласованную композицию */
+  .hero, .index-page .header {
+    background: #fff;
+  }
+  .index-page::before {
+    background: #fff;
+  }
+  .index-page .hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-bottom: 20px;
+    min-height: 0;
+  }
+  .index-page .hero-copy {
+    display: contents;
+  }
+  .index-page .hero-copy h1 {
+    order: -3;
+    text-align: center;
+    font-size: 38px;
+  }
+  .index-page .hero-copy .lead {
+    order: -2;
+    text-align: center;
+    font-size: 12px;
+    max-width: none;
+    margin-top: 6px;
+  }
+  .index-page .hero-art {
+    order: 0;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin-top: 18px;
+    display: block;
+    position: relative;
+    overflow: visible;
+  }
+  .index-page .hero-art .hero-photo {
+    display: block;
+    width: 78%;
+    height: auto;
+    max-width: 100%;
+    max-height: none;
+    margin-inline: auto;
+    object-fit: contain;
+    object-position: center bottom;
+    transform: none;
+  }
+  .index-page .hero-art .photo-ornament {
+    width: 100%;
+    height: 85%;
+    left: 0;
+    top: 8%;
+    object-fit: contain;
+  }
+  .index-page .hero-copy .socials {
+    display: none;
+  }
+  .index-page .hero-copy .intro {
+    position: relative;
+    z-index: 2;
+    max-width: 350px;
+    margin: 15px auto 0;
+    font-size: 12px;
+    text-align: center;
+  }
+  .index-page .hero-cta {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    margin-top: 22px;
+    text-align: center;
+  }
+  .hero > .decor {
+    width: 140px;
+    right: -85px;
+    top: 20px;
+  }
+  .scroll-down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40px;
+    gap: 0;
+    margin: 12px auto 0;
+    padding: 8px;
+  }
+  .scroll-down span {
+    width: 13px;
+    height: 13px;
+    border-right: 2px solid #f28b64;
+    border-bottom: 2px solid #f28b64;
+    transform: rotate(45deg);
+    border-radius: 1px;
+  }
+  /* Направления: три широкие горизонтальные карточки */
+  .directions {
+    padding: 28px 0 28px;
+    background: #fff;
+  }
+  .directions h2 {
+    max-width: 280px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-align: left;
+  }
+  .lesson-cards {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+  .lesson-card {
+    height: 118px;
+    border-radius: 5px;
+  }
+  .lesson-card img {
+    width: 54%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left center;
+  }
+  .lesson-card h3 {
+    writing-mode: horizontal-tb;
+    font-size: 17px;
+    right: 10px;
+    width: 45%;
+    max-height: none;
+    text-align: center;
+  }
+  .vocal img {
+    width: 49%;
+    height: 105%;
+  }
+  .stage img {
+    width: 50%;
+    height: 90%;
+  }
+  .directions > .directions-ring-left {
+    left: -70px;
+    right: auto;
+    top: 27%;
+    width: 142px;
+    z-index: 0;
+  }
+  .directions > .decor:last-child {
+    left: auto;
+    right: -78px;
+    top: 3%;
+    width: 160px;
+    z-index: 0;
+  }
+  .directions .section-inner {
+    position: relative;
+    z-index: 1;
+  }
+  /* Три преимущества вертикально */
+  .features {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 9px;
+    margin-top: 20px;
+    padding: 0;
+  }
+  .feature {
+    display: flex;
+    width: 215px;
+    align-items: center;
+    gap: 12px;
+    padding: 0;
+    font-size: 12px;
+    text-align: left;
+  }
+  .feature img {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+  }
+  /* Обучение: как Figma — единый мягкий фон и раздельные уровни */
+  .training {
+    background: #fff1ef;
+  }
+  .training .split {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-block: 27px 32px;
+  }
+  .training-title {
+    width: 100%;
+    min-height: 145px;
+    display: grid;
+    place-items: center;
+  }
+  .training-title h2 {
+    font-size: 30px;
+    position: relative;
+    z-index: 1;
+  }
+  .training-title > img {
+    width: 145px;
+    left: calc(50% - 72px);
+  }
+  .training-title .striped {
+    width: 105px;
+    left: calc(50% - 100px);
+    top: 55px;
+  }
+  .training .copy {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+  .training .copy h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+  .training .copy h2 br {
+    display: none;
+  }
+  .training .copy p {
+    max-width: 340px;
+    margin-inline: auto;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .training .copy p + p {
+    margin-top: 11px;
+  }
+  .training > .decor {
+    width: 160px;
+    top: auto;
+    bottom: -90px;
+    right: -75px;
+  }
+  /* Контакты: сперва текст и кнопка, затем широкое пианино */
+  .home-contact {
+    background: #fff1ef;
+  }
+  .home-contact .split {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-block: 26px 0;
+    text-align: center;
+  }
+  .home-contact .copy {
+    order: -1;
+    align-self: center;
+    width: 100%;
+    text-align: center;
+  }
+  .home-contact .copy h2 {
+    font-size: 27px;
+    margin-bottom: 18px;
+  }
+  .home-contact .copy p {
+    max-width: 340px;
+    margin-inline: auto;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .home-contact .copy .button {
+    margin-top: 20px;
+    width: min(100%, 300px);
+  }
+  .home-contact .piano-frame {
+    order: 1;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    transform: none;
+    border-radius: 0;
+  }
+  .home-contact .piano-contact {
+    display: block;
+    position: static;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    transform: none;
+    border-radius: 0;
+    margin: 0;
+  }
+  .home-contact > .decor {
+    width: 155px;
+    right: -70px;
+    bottom: 26%;
+  }
+  /* Подвал как в макете: соцсети и логотип */
+  .footer {
+    min-height: 0;
+    padding-block: 15px 22px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .footer nav {
+    display: none;
+  }
+  .footer .socials {
+    order: -1;
+  }
+  .footer .logo {
+    width: 145px;
+  }
+  .socials button, .socials button img {
+    width: 32px;
+    height: 33px;
+    flex-basis: 32px;
+  }
+  /* Используются на внутренних страницах сайта */
+  .story .split {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    gap: 15px;
+    padding-block: 32px;
+  }
+  .story .copy, .story:not(:has(.reverse)) .copy, .story .reverse .copy {
+    order: 2;
+  }
+  .story .photo-wrap {
+    order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .story .content-photo {
+    width: min(100%,330px);
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+  }
+  .story .copy {
+    width: 100%;
+    text-align: center;
+  }
+  .about-intro .split {
+    gap: 12px;
+  }
+  .about-intro .copy {
+    display: contents;
+  }
+  .about-intro .content-photo {
+    max-height: 310px;
+  }
+  .about-intro h1, .about-intro .about-lead {
+    text-align: center;
+  }
+  .lesson-intro .split {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-block: 25px;
+  }
+  .lesson-intro .photo-wrap {
+    order: 0;
+    width: 100%;
+  }
+  .lesson-intro .copy {
+    order: 1;
+    width: 100%;
+  }
+  .lesson-intro .content-photo {
+    max-height: 250px;
+  }
+  .formats {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .formats > div {
+    min-height: 100px;
+  }
+  .formats span {
+    font-size: 10px;
+  }
+  .schedule .split {
+    padding-block: 32px;
+  }
+  .lesson-contact {
+    padding-bottom: 25px;
+  }
+  .lesson-contact .back-link {
+    display: inline-block;
+  }
+  .story .photo-wrap .photo-ornament {
+    width: min(85%,300px);
+    height: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .story .photo-wrap .decor {
+    width: 130px;
+    top: 5%;
+    right: 0;
+  }
+  .photo-wrap .content-photo {
+    max-width: 100%;
+    object-fit: contain;
+  }
+  .about-intro .photo-wrap {
+    order: 0;
+  }
+  .about-intro .photo-wrap .photo-ornament {
+    width: 87%;
+    left: 7%;
+    height: 90%;
+  }
+  .lesson-intro .photo-wrap .photo-ornament {
+    width: 95%;
+    left: 2%;
+  }
+}
+@media (max-width: 359px) {
+  .container {
+    width: calc(100% - 28px);
+  }
+  .hero-copy h1 {
+    font-size: 32px;
+  }
+  .lesson-card h3 {
+    font-size: 15px;
+  }
+  .mobile-menu.is-open {
+    padding-inline: 18px;
+  }
+}
+
+
+/* ПРАВКИ */
+/* Увеличение картинки только в карточке фортепиано */
+.lesson-card.piano img {
+  transform: translateX(-20px) scale(1.4);
+  transform-origin: right center;
+}
+/* Надпись поверх картинки */
+.lesson-card.piano h3 {
+  z-index: 1;
+}
+/* Скрываем «Запись» только в бургер-меню */
+.mobile-menu nav > button[data-contact]:not(.menu-contact) {
+  display: none;
+}
+/* Плавная подсказка прокрутки на русской и японской главной. */
+@media (prefers-reduced-motion:no-preference) {
+  .scroll-down span {
+    animation: scroll-arrow 1.8s ease-in-out infinite;
+  }
+  .scroll-down span:nth-child(2) {
+    animation-delay: .18s;
+  }
+}
+@keyframes scroll-arrow {
+  0%,100% {
+    transform: translateY(0) rotate(45deg);
+    opacity: .5;
+  }
+  50% {
+    transform: translateY(6px) rotate(45deg);
+    opacity: 1;
+  }
+}
+
+/* ==============================================================
+   Исправление мобильной русской главной страницы.
+   Центрирование направления занятий и читаемые заголовки обучения.
+   Японская версия и страницы ПК/планшета не затрагиваются.
+   ============================================================== */
+@media (max-width: 600px) {
+  html:lang(ru) .index-page .directions h2 {
+    width: 100%;
+    max-width: none;
+    text-align: center;
+    margin-inline: auto;
+    margin-bottom: 24px;
+  }
+
+  /* В русском заголовке важны переносы между словами. */
+  html:lang(ru) .index-page .training .copy h2 {
+    line-height: 1.18;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+  html:lang(ru) .index-page .training .copy h2 br {
+    display: revert;
+  }
+
+  /* Кольца остаются за заголовком и не пересекают буквы. */
+  html:lang(ru) .index-page .training-title > img:not(.striped) {
+    top: 48px;
+    opacity: 0.74;
+  }
+  html:lang(ru) .index-page .training-title .striped {
+    top: 89px;
+    opacity: 0.65;
+  }
+  html:lang(ru) .index-page .training-title h2 {
+    z-index: 2;
+  }
+}

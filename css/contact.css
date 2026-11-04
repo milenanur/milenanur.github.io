@@ -1,0 +1,375 @@
+/* contact.css: стили страницы; общие правила находятся в style.css.
+   Адаптивные настройки: ищите @media (планшет / телефон). */
+/* ==========================================================
+   КОНТАКТЫ — только уникальные стили contact.html
+   Общие шапка, футер, кнопки, заголовки: style.css
+   ========================================================== */
+
+/* ==================== ПК: ОТ 1025px ==================== */
+.contact-page .contact-main {
+  padding-top: 22px;
+}
+.contact-page .contact-breadcrumb {
+  display: inline-block;
+  padding-block: 8px;
+  font-size: 16px;
+}
+.contact-page .contact-breadcrumb:hover {
+  color: var(--pink);
+}
+/* Первый экран: заголовок и подпись */
+.contact-page .contact-intro {
+  padding: 12px 0 42px;
+}
+.contact-page .contact-eyebrow {
+  color: var(--pink);
+  font-size: 21px;
+}
+.contact-page .contact-intro h1 {
+  color: var(--pink);
+  font-family: var(--font-heading);
+  font-size: clamp(52px, 6.1vw, 94px);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -.05em;
+}
+
+ .contact-page .contact-period {
+  display: inline-block;
+  width: .30em;
+  height: .30em;
+  margin-left: .16em;
+
+  border-radius: 50%;
+  background-color: var(--pink);
+  color: transparent;
+
+  overflow: hidden;
+  line-height: 0;
+  vertical-align: baseline;
+}
+/* Две колонки: информация слева, форма справа */
+.contact-page .contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .83fr) minmax(0, 1.17fr);
+  gap: 6%;
+  align-items: start;
+}
+.contact-page .contact-message {
+  position: relative;
+  min-height: 540px;
+}
+.contact-page .contact-message > p {
+  max-width: 420px;
+  font-size: 17px;
+  line-height: 1.8;
+}
+.contact-page .contact-sakura {
+  width: min(80%, 330px);
+  height: auto;
+  margin-top: 30px;
+  object-fit: contain;
+
+  /* Поднимаем сакуру выше */
+  transform: translateY(-20px);
+}
+/* Контактная форма */
+.contact-page .contact-form {
+  display: grid;
+  gap: 22px;
+}
+.contact-page .contact-field {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.contact-page .contact-field label {
+  font-size: 15px;
+  font-weight: 600;
+}
+.contact-page .required {
+  display: inline-block;
+  margin-left: 12px;
+  padding: 1px 7px;
+  border-radius: 5px;
+  background: var(--pink);
+  color: var(--button-text);
+  font-size: 11px;
+}
+.contact-page .contact-field input,
+.contact-page .contact-field textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 52px;
+  padding: 12px 14px;
+  border: 1px solid var(--field-border);
+  border-radius: 11px;
+  background-color: var(--field-background);
+  color: var(--text);
+  outline-offset: 3px;
+}
+.contact-page .contact-field textarea {
+  min-height: 260px;
+  resize: vertical;
+}
+.contact-page .contact-field input:focus-visible,
+.contact-page .contact-field textarea:focus-visible {
+  outline: 2px solid var(--pink);
+}
+.contact-page .contact-privacy {
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.6;
+}
+/* Отправка формы: кнопка по размеру текста, не на всю ширину */
+.contact-page .contact-submit {
+  width: fit-content;
+  max-width: 100%;
+  justify-self: start;
+  justify-content: center;
+  gap: 14px;
+  min-height: 52px;
+  padding: 12px 26px;
+}
+.contact-page .contact-submit img {
+  margin-left: 0;
+}
+.contact-page .contact-form-status {
+  min-height: 1.5em;
+  font-size: 13px;
+  color: var(--pink);
+}
+
+/* Разделитель над кнопкой возврата на главную.
+   Размер самой кнопки по-прежнему задаётся в style.css */
+.contact-page .page-return {
+  border-top: 1px solid var(--divider);
+  margin-top: 44px;
+}
+
+/* ==================== ПЛАНШЕТ: 601–1024px ==================== */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .contact-page .contact-intro {
+    padding-bottom: 28px;
+  }
+  .contact-page .contact-intro h1 {
+    font-size: clamp(38px, 6.8vw, 68px);
+  }
+  .contact-page .contact-subtitle {
+    font-size: 17px;
+    margin-top: 20px;
+  }
+  .contact-page .contact-layout {
+    grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr);
+    gap: 5%;
+  }
+  .contact-page .contact-message {
+    min-height: 0;
+  }
+  .contact-page .contact-message > p {
+    font-size: 14px;
+  }
+  .contact-page .contact-sakura {
+    width: 90%;
+    margin-top: 20px;
+    /* Поднимаем сакуру вверх */
+  transform: translateY(-10px);
+  }
+  .contact-page .contact-field textarea {
+    min-height: 210px;
+  }
+}
+/* ==================================================
+   УЗКИЙ ПЛАНШЕТ — 601px–793px
+   ================================================== */
+
+@media (min-width: 601px) and (max-width: 793px) {
+
+  /* Текст сверху, форма под ним */
+
+  .contact-page .contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  /* Блок с розовым заголовком */
+
+  .contact-page .contact-message {
+    min-width: 0;
+    min-height: 0;
+  }
+
+  /* Заголовок без наложения на форму */
+
+  .contact-page .contact-message .section-title {
+    font-size: 26px;
+    line-height: 1.4;
+    margin-bottom: 14px;
+  }
+
+  /* Описание */
+
+  .contact-page .contact-message > p {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* Скрываем сакуру на узком планшете */
+
+  .contact-page .contact-sakura {
+    display: none;
+  }
+
+}
+
+/* ==================== ТЕЛЕФОН: ДО 600px ==================== */
+@media (max-width: 600px) {
+  .contact-page .contact-main {
+    padding-top: 8px;
+  }
+  .contact-page .contact-breadcrumb {
+    font-size: 13px;
+  }
+  .contact-page .contact-intro {
+    padding: 10px 0 20px;
+  }
+  .contact-page .contact-eyebrow {
+    font-size: 16px;
+  }
+  .contact-page .contact-intro h1 {
+    font-size: clamp(30px, 8vw, 48px);
+  }
+  .contact-page .contact-subtitle {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-top:10px;
+  }
+  .contact-page .contact-layout {
+    display: block;
+  }
+  .contact-page .contact-message {
+    min-height: 0;
+    margin-bottom: 22px;
+  }
+  .contact-page .contact-message > p {
+    font-size: 13px;
+    margin-top:10px;
+  }
+  .contact-page .contact-desktop-break,
+  .contact-page .contact-sakura {
+    display: none;
+  }
+  .contact-page .contact-form {
+    gap: 16px;
+  }
+  .contact-page .contact-field label {
+    font-size: 13px;
+  }
+  .contact-page .contact-field input,
+  .contact-page .contact-field textarea {
+    min-height: 46px;
+    padding: 10px 12px;
+  }
+  .contact-page .contact-field textarea {
+    min-height: 170px;
+  }
+
+  /* Отступ перед разделителем на телефоне */
+  .contact-page .page-return {
+    margin-top: 26px;
+  }
+
+  .contact-page .contact-submit {
+    margin-bottom: 0;
+  }
+
+  .contact-page .contact-form-status {
+    min-height: 0;
+    margin-bottom: 0;
+  }
+
+}
+
+/* Способы связи: готовые SVG справа от кнопки отправки */
+.contact-page .contact-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  column-gap: 28px;
+  row-gap: 18px;
+}
+.contact-page .contact-social {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.contact-page .contact-social-label {
+  max-width: 220px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.contact-page .contact-social-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.contact-page .contact-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  border-radius: 14px;
+  transition: transform .2s ease, filter .2s ease;
+}
+.contact-page .contact-social-link img {
+  display: block;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.contact-page .contact-social-link:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.12);
+}
+.contact-page .contact-social-link:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 4px;
+}
+@media (max-width: 600px) {
+  /* Только мобильная версия: кнопка и способы связи по центру */
+  .contact-page .contact-actions {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    width: 100%;
+  }
+  .contact-page .contact-submit {
+    align-self: center;
+    justify-self: center;
+  }
+  .contact-page .contact-social {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+  }
+  .contact-page .contact-social-label {
+    max-width: none;
+    text-align: center;
+  }
+  .contact-page .contact-social-links {
+    justify-content: center;
+    gap: 14px;
+  }
+  .contact-page .contact-social-link,
+  .contact-page .contact-social-link img { width: 44px; height: 44px; }
+}

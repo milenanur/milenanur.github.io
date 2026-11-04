@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Портфолио Милены: веб-дизайн, графический дизайн и видеомонтаж." name="description"/>
+<title>MILENA | Портфолио</title>
+<!-- Шрифты -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&amp;family=Noto+Sans+JP:wght@400;600;900&amp;family=Oswald:wght@700&amp;display=swap" rel="stylesheet"/>
+<!-- Стили сайта -->
+<link href="../css/style.css" rel="stylesheet"/>
+<!-- JavaScript -->
+<script defer="" src="../js/main.js"></script>
+<link href="../css/ru.css" rel="stylesheet"/><!-- Center the two published website projects; hide unpublished school site. -->
+<style>
+  .works-grid > [hidden] { display: none !important; }
+  @media (min-width: 1025px) {
+    .works-grid--featured { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .works-grid--featured > .work-card { grid-column: span 2; }
+    .works-grid--featured > .work-card--bakery { grid-column: 2 / span 2; }
+    .works-grid--featured > .work-card--singer { grid-column: 4 / span 2; }
+  }
+</style>
+</head>
+<body>
+<!-- ==================== ШАПКА ==================== -->
+<header class="header" id="top">
+<div class="container header-inner">
+<a aria-label="MILENA — главная" class="logo" href="index.html">
+          MILENA
+        </a>
+<!-- Кнопка меню телефона -->
+<button aria-controls="main-navigation" aria-expanded="false" aria-label="Открыть меню" class="menu-button" hidden="" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<!-- Основная навигация -->
+<nav aria-label="Главное меню" class="navigation" id="main-navigation">
+<a class="mobile-only" href="index.html">
+            Главная
+          </a>
+<a class="navigation-works" href="#works">
+            Мои работы
+          </a>
+<div class="navigation-submenu mobile-only">
+<a href="#websites">Веб-сайты</a>
+<a href="banners.html">Баннеры</a>
+<a href="pamphlets.html">Листовки и буклеты</a>
+<a href="videos.html">Видео</a>
+</div>
+<a href="about.html">Обо мне</a>
+<a href="contact.html">Контакты</a>
+<!-- Русскую версию подключим позже -->
+<div class="navigation-language mobile-only">
+<a class="language-jp" href="../index.html" lang="ja">JP</a>
+<span aria-hidden="true"> / </span>
+<a aria-current="page" class="language-ru" href="index.html" lang="ru">RU</a>
+</div>
+</nav>
+<div class="language">
+<a class="language-jp" href="../index.html" lang="ja">JP</a>
+<span aria-hidden="true"> / </span>
+<a aria-current="page" class="language-ru" href="index.html" lang="ru">RU</a>
+</div>
+</div>
+</header>
+<main class="container">
+<!-- ==================== ПЕРВЫЙ ЭКРАН ==================== -->
+<section aria-labelledby="hero-title" class="hero">
+<div class="hero-text">
+<h1 id="hero-title">
+<span>ВЕБ-ДИЗАЙН<span class="dot">.</span></span>
+<span class="hero-white">
+              ГРАФИКА<span class="dot">.</span>
+</span>
+<span>ВИДЕОМОНТАЖ<span class="dot">.</span></span>
+</h1>
+<p class="hero-description">
+<span>Милена</span>
+<span>Веб-дизайн · Видеомонтаж</span>
+</p>
+<a class="button button-pink" href="#works">
+            Смотреть работы
+            <img alt="" src="../images/icons/arrow-right.svg"/>
+</a>
+</div>
+<!-- Портрет, розовое облако и блик -->
+<div class="hero-portrait">
+<img alt="" class="portrait-cloud" src="../images/photos/cloud.png"/>
+<img alt="Милена" class="portrait-photo" fetchpriority="high" src="../images/photos/mila2.png"/>
+<img alt="" class="portrait-swoosh" src="../images/photos/pink-swoosh.PNG"/>
+</div>
+<!-- Краткая информация -->
+<ul class="hero-features">
+<li>
+<img alt="" src="../images/icons/monitor.svg"/>
+<span class="feature-text">
+<span>Веб-дизайн и графика</span>
+<span>· Видео</span>
+</span>
+</li>
+<li>
+<img alt="" src="../images/icons/messages-square.svg"/>
+<span class="feature-text">
+<span>Японский</span>
+<span>/ Русский</span>
+</span>
+</li>
+<li>
+<img alt="" src="../images/icons/map-pin-pink.svg"/>
+<span class="feature-text">
+<span>Кобе,</span>
+<span>Япония</span>
+</span>
+</li>
+</ul>
+<!-- Указатель вниз -->
+<a aria-label="Перейти к работам" class="scroll-down" href="#works">
+<span></span>
+</a>
+</section> <!-- конец hero -->
+<!-- ==================== РАБОТЫ ==================== -->
+<section aria-labelledby="works-title" class="section works" id="works">
+<h2 class="section-title" id="works-title">
+          Мои работы
+        </h2>
+<div class="works-grid works-grid--featured">
+<!-- 1. Сайт школы -->
+<!-- Когда будет адрес сайта, заменим article на a со ссылкой -->
+<article class="work-card work-link" hidden aria-hidden="true">
+<img alt="Русской школы — дизайн сайта" class="work-image" loading="lazy" src="../images/photos/card-school.webp"/>
+<div class="work-description">
+<h3>Сайт школы</h3>
+<p>
+                Русский язык открывает детям мир.<br/>
+                Сайт о занятиях и жизни школы.
+              </p>
+<img alt="" class="work-arrow" src="../images/icons/arrow-up-right.svg"/>
+</div>
+</article>
+<!-- 2. Сайт пекарни -->
+<a class="work-card work-link work-card--bakery" id="websites" href="../projects/BACERY/index.html?lang=ru" target="_blank" rel="noopener noreferrer">
+<img alt="Пекарни — дизайн сайта" class="work-image" loading="lazy" src="../images/photos/card-bacery.webp"/>
+<div class="work-description">
+<h3>Сайт пекарни</h3>
+<p>
+                Атмосфера уюта и аромат<br/>
+                свежей выпечки.
+              </p>
+<img alt="" class="work-arrow" src="../images/icons/arrow-up-right.svg"/>
+</div>
+</a>
+<!-- 3. Сайт певицы -->
+<a class="work-card work-link work-card--singer" href="../projects/MILENA_singer_RU_JP/index.html" target="_blank" rel="noopener noreferrer">
+<img alt="Певицы — дизайн сайта" class="work-image" loading="lazy" src="../images/photos/card-singer.webp"/>
+<div class="work-description">
+<h3>Сайт певицы</h3>
+<p>
+                Музыка, творчество и уроки<br/>
+                вокала в одном пространстве.
+              </p>
+<img alt="" class="work-arrow" src="../images/icons/arrow-up-right.svg"/>
+</div>
+</a>
+<!-- 4. Баннеры -->
+<a class="work-card work-link" href="banners.html">
+<img alt="Дизайн баннеров — коллекция работ" class="work-image" loading="lazy" src="../images/photos/card-banner.webp"/>
+<div class="work-description">
+<h3>Дизайн баннеров</h3>
+<p>
+                Выразительный дизайн,<br/>
+                который привлекает внимание.
+              </p>
+<img alt="" class="work-arrow" src="../images/icons/arrow-up-right.svg"/>
+</div>
+</a>
+<!-- 5. Панфлеты и буклеты -->
+<a class="work-card work-link" href="pamphlets.html">
+<img alt="Листовки и буклеты — коллекция работ" class="work-image" loading="lazy" src="../images/photos/card-pamphlet.webp"/>
+<div class="work-description">
+<h3>Буклет</h3>
+<p>
+                Наглядная подача информации<br/>
+                в привлекательном оформлении.
+              </p>
+<img alt="" class="work-arrow" src="../images/icons/arrow-up-right.svg"/>
+</div>
+</a>
+<!-- 6. Видео -->
+<a class="work-card work-link" href="videos.html">
+<img alt="Видеомонтаж — коллекция работ" class="work-image" loading="lazy" src="../images/photos/card-premiere.webp"/>
+<div class="work-description">
+<h3>Видеомонтаж</h3>
+<p>
+                Истории, рассказанные<br/>
+                через изображение и звук.
+              </p>
+<img alt="" class="work-arrow" src="../images/icons/arrow-up-right.svg"/>
+</div>
+</a>
+</div>
+</section>
+<!-- ==================== ПРОГРАММЫ ==================== -->
+<section aria-labelledby="tools-title" class="section tools">
+<h2 class="section-title" id="tools-title">
+          Инструменты
+        </h2>
+<ul class="tools-list">
+<li>
+<img alt="" loading="lazy" src="../images/icons/adobe-photoshop-svgrepo-com.svg"/>
+<span>Photoshop</span>
+</li>
+<li>
+<img alt="" loading="lazy" src="../images/icons/adobe-illustrator-svgrepo-com.svg"/>
+<span>Illustrator</span>
+</li>
+<li>
+<img alt="" loading="lazy" src="../images/icons/html-svgrepo-com.svg"/>
+<span>HTML</span>
+</li>
+<li>
+<img alt="" loading="lazy" src="../images/icons/html-svgrepo-css.svg"/>
+<span>CSS</span>
+</li>
+<li>
+<img alt="" loading="lazy" src="../images/icons/figma-svgrepo-com.svg"/>
+<span>Figma</span>
+</li>
+<li>
+<img alt="" loading="lazy" src="../images/icons/visual-studio-code-svgrepo-com.svg"/>
+<span>VS Code</span>
+</li>
+<li>
+<img alt="" loading="lazy" src="../images/icons/adobe-premiere-svgrepo-com.svg"/>
+<span>Premiere Pro</span>
+</li>
+<li>
+<img alt="" loading="lazy" src="../images/icons/wordpress-svgrepo-com.svg"/>
+<span>WordPress</span>
+</li>
+</ul>
+</section>
+<!-- ==================== ОБО МНЕ ==================== -->
+<section aria-labelledby="about-title" class="section about">
+<h2 class="section-title" id="about-title">
+          Обо мне
+        </h2>
+<div class="about-content">
+<div class="about-photo">
+<img alt="" class="about-cloud" loading="lazy" src="../images/photos/cloud.png"/>
+<img alt="Фотография Милены" class="about-person" loading="lazy" src="../images/photos/mila2.png"/>
+</div>
+<div class="about-text">
+<p>
+              Я живу в Кобе и изучаю веб-дизайн.<br/>
+              Опыт в сфере образования и культуры<br/>
+              помогает мне создавать понятный дизайн.
+            </p>
+<a class="button button-outline" href="about.html">
+              Подробнее обо мне
+              <img alt="" src="../images/icons/arrow-right.svg"/>
+</a>
+</div>
+</div>
+<img alt="" class="about-sakura" loading="lazy" src="../images/decorations/sakura-horizontal.svg"/>
+</section>
+<!-- ==================== ПРОЦЕСС И КОНТАКТЫ ==================== -->
+<div class="bottom-grid">
+<section aria-labelledby="process-title" class="section process">
+<h2 class="section-title" id="process-title">
+            Этапы работы
+          </h2>
+<ol class="process-list">
+<li>
+<span class="step-number">01</span>
+<h3>Обсуждение</h3>
+<p>Уточняю ваши пожелания и цели.</p>
+</li>
+<li>
+<span class="step-number">02</span>
+<h3>Планирование</h3>
+<p>Продумываю структуру и концепцию.</p>
+</li>
+<li>
+<span class="step-number">03</span>
+<h3>Веб-дизайн</h3>
+<p>Создаю дизайн по концепции.</p>
+</li>
+<li>
+<span class="step-number">04</span>
+<h3>Завершение</h3>
+<p>Вношу правки и завершаю проект.</p>
+</li>
+</ol>
+</section>
+<aside aria-labelledby="contact-title" class="contact-card">
+<h2 id="contact-title">Контакты</h2>
+<p>Буду рада вашему сообщению!</p>
+<a class="button button-dark" href="contact.html">
+            Написать мне
+            <img alt="" src="../images/icons/arrow-right.svg"/>
+</a>
+</aside>
+</div>
+<!-- КНОПКА ВОЗВРАТА НА ГЛАВНУЮ -->
+<div class="page-return">
+<a class="button button-outline button-top" href="#top">
+    Наверх
+    <img alt="" src="../images/icons/arrow-up.svg"/>
+</a>
+</div>
+</main>
+<!-- ==================== ПОДВАЛ ==================== -->
+<footer class="footer">
+<div class="container footer-inner">
+<a class="logo" href="index.html">
+          MILENA
+        </a>
+<p class="footer-location">
+<img alt="" src="../images/icons/map-pin-white.svg"/>
+<span>Кобе, Япония</span>
+</p>
+</div>
+</footer>
+</body>
+</html>

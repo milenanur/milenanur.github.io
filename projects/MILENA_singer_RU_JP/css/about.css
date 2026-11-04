@@ -1,0 +1,983 @@
+/* Страница «Обо мне» — объединённые окончательные стили. */
+/* Размеры экранов указаны в блоках @media в конце файла. */
+/* Основная компоновка, цвета, элементы интерфейса */
+h1,h2,h3 {
+  font-weight: 600;
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+h1 {
+  font-size: clamp(36px,4.2vw,60px);
+}
+h2 {
+  font-size: clamp(28px,3.3vw,48px);
+}
+p+p {
+  margin-top: 18px;
+}
+.container {
+  width: min(var(--content),calc(100% - 80px));
+  margin-inline: auto;
+}
+section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.section-inner {
+  position: relative;
+  z-index: 1;
+}
+.surface {
+  background: var(--surface);
+}
+.button {
+  border: 0;
+  border-radius: 999px;
+  background: var(--orange);
+  color: white;
+  padding: 15px 34px;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 3px 3px #0002;
+  transition: transform .2s,filter .2s;
+}
+.button:hover {
+  filter: brightness(.94);
+  transform: translateY(-2px);
+}
+button:focus-visible,a:focus-visible {
+  outline: 3px solid #225bb2;
+  outline-offset: 5px;
+}
+.decor {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: 250px;
+  right: -75px;
+  top: 35px;
+}
+.index-page {
+  background: white;
+}
+.index-page .header {
+  background: var(--surface);
+}
+.index-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: var(--surface);
+  z-index: -1;
+}
+.logo {
+  width: 220px;
+  flex-shrink: 0;
+}
+.logo img {
+  width: 100%;
+}
+.desktop-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 45px;
+  align-items: center;
+}
+.desktop-nav a,.desktop-nav button,.footer nav a,.footer nav button {
+  font-size: 14px;
+  font-weight: 600;
+}
+.desktop-nav button,.footer nav button,.languages button {
+  border: 0;
+  padding: 0;
+  background: none;
+}
+.desktop-nav a:hover,.desktop-nav button:hover {
+  color: var(--orange);
+}
+.languages {
+  font-size: 13px;
+  white-space: nowrap;
+}
+.languages span {
+  border-bottom: 2px solid var(--orange);
+  padding-bottom: 4px;
+}
+.menu-toggle {
+  display: none;
+}
+.socials img {
+  max-height: 22px;
+}
+.footer {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+.footer .logo {
+  width: 185px;
+}
+.footer nav {
+  display: flex;
+  gap: 35px;
+}
+.back-link {
+  display: inline-block;
+  color: #6c6c6c;
+  font-size: 15px;
+  margin: 22px 0 30px;
+}
+.content-photo {
+  width: 100%;
+  max-height: 510px;
+  object-fit: contain;
+}
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 65px;
+  padding-block: 55px;
+}
+.split h2 {
+  margin-bottom: 24px;
+}
+.split .copy {
+  position: relative;
+  z-index: 1;
+}
+.split .button {
+  margin-top: 28px;
+}
+.notice {
+  position: fixed;
+  bottom: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: white;
+  border-radius: 12px;
+  padding: 16px 24px;
+  z-index: 100;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  font-size: 14px;
+}
+.about-intro .split {
+  padding-top: 0;
+}
+.about-lead {
+  margin-block: 30px !important;
+  font-size: 20px;
+}
+.about-intro > .decor {
+  right: 5%;
+  top: 90px;
+}
+.about-intro h1 {
+  margin-bottom: 35px;
+}
+.story .reverse .copy {
+  order: 0;
+}
+.story:not(:has(.reverse)) .copy {
+  order: 2;
+}
+.story .photo-wrap .decor {
+  top: -25px;
+  right: -25px;
+  width: 270px;
+}
+/* Декорации страницы */
+.about-intro {
+  background: white;
+}
+.story.surface .photo-wrap .photo-ornament {
+  width: 115%;
+  max-width: none;
+  height: 115%;
+  top: -8%;
+  left: -7%;
+  transform: scaleX(-1);
+}
+.story:last-of-type .photo-wrap > .decor {
+  left: 0;
+  right: auto;
+  top: 0;
+}
+.about-page main > .container:last-child {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100px;
+}
+.about-page main > .container:last-child::before,
+.about-page main > .container:last-child::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.about-page main > .container:last-child::before {
+  width: 250px;
+  height: 250px;
+  left: 31%;
+  top: 5px;
+  background-image: url("../image/decoration/circle.svg");
+}
+.about-page main > .container:last-child::after {
+  width: 200px;
+  height: 200px;
+  left: 47%;
+  top: 20px;
+  background-image: url("../image/decoration/Subtract.svg");
+}
+:root {
+  --white: #fff;
+  --surface: #f0f0f0;
+  --text: #000;
+  --orange: #f28b64;
+  --blue: #5290ea;
+  --card: #e2e2e2;
+  --content: 1140px;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: Montserrat,Arial,sans-serif;
+  color: var(--text);
+  background: var(--white);
+  font-size: 16px;
+  line-height: 1.4;
+  overflow-x: clip;
+}
+img {
+  max-width: 100%;
+}
+.header, .footer {
+  isolation: isolate;
+}
+.header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  position: relative;
+  z-index: 40;
+}
+.mobile-menu {
+  display: none;
+  z-index: 35;
+}
+section .container {
+  position: relative;
+  z-index: 1;
+}
+.back-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 15;
+  background: #fffdf5;
+  box-shadow: 0 2px 7px #0002;
+  border: 1px solid #e5e5e5;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+}
+
+.hero-art {
+  position: relative;
+}
+.hero-photo {
+  position: relative;
+  z-index: 1;
+}
+.story .split {
+  min-height: 380px;
+}
+.story .photo-wrap {
+  min-width: 0;
+}
+.story .content-photo {
+  max-height: 390px;
+}
+.about-intro .content-photo {
+  max-height: 430px;
+}
+.lesson-intro .split {
+  align-items: center;
+}
+.lesson-intro .photo-wrap {
+  min-width: 0;
+}
+.lesson-intro .content-photo {
+  max-height: 410px;
+}
+.lesson-card img {
+  object-position: left center;
+}
+.mobile-menu nav button {
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.photo-wrap {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+}
+.photo-wrap .photo-ornament {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: 95%;
+  height: 95%;
+  top: 8%;
+  left: 0;
+  object-fit: contain;
+  transform: none;
+}
+.about-intro .photo-wrap .content-photo {
+  width: 88%;
+  max-height: 380px;
+}
+.about-intro .photo-wrap .photo-ornament {
+  width: 115%;
+  max-width: none;
+  height: 115%;
+  top: -7%;
+  left: -7%;
+}
+.story.surface .photo-wrap .content-photo {
+  width: 90%;
+}
+.story.surface .photo-wrap .photo-ornament {
+  width: 115%;
+  max-width: none;
+  height: 115%;
+  top: -8%;
+  left: -7%;
+  transform: scaleX(-1);
+}
+.hero-art .photo-ornament {
+  width: 85%;
+  height: 80%;
+  left: 6%;
+  top: 11%;
+}
+.photo-wrap .content-photo,.photo-wrap .hero-photo {
+  position: relative;
+  z-index: 1;
+  object-fit: contain;
+}
+.photo-wrap > .decor {
+  z-index: -1;
+  pointer-events: none;
+}
+section .decor {
+  z-index: 0;
+  pointer-events: none;
+}
+.socials {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.socials button {
+  width: 40px;
+  height: 41px;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  display: block;
+  place-items: center;
+  flex: 0 0 40px;
+  box-shadow: none;
+}
+.socials button img {
+  display: block;
+  width: 40px;
+  height: 41px;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+}
+/* Адаптация: (max-width:1000px) */
+@media (max-width:1000px) {
+  .container {
+    width: calc(100% - 64px);
+  }
+  .header {
+    height: 85px;
+    gap: 22px;
+  }
+  .logo {
+    width: 160px;
+  }
+  .desktop-nav {
+    gap: 24px;
+  }
+  .desktop-nav a,.desktop-nav button {
+    font-size: 12px;
+  }
+  .split {
+    gap: 30px;
+  }
+  .footer nav {
+    gap: 20px;
+  }
+  .footer .logo {
+    width: 140px;
+  }
+  body {
+    font-size: 14px;
+  }
+  .photo-wrap .photo-ornament {
+    width: 100%;
+    left: 0;
+    top: 5%;
+  }
+}
+/* Адаптация: (max-width:600px) */
+@media (max-width:600px) {
+  .container {
+    width: calc(100% - 40px);
+  }
+  body {
+    font-size: 14px;
+  }
+  .logo {
+    width: 125px;
+  }
+  .desktop-nav {
+    display: none;
+  }
+  .languages {
+    margin-left: auto;
+    font-size: 11px;
+  }
+  .menu-toggle {
+    display: grid;
+    gap: 4px;
+    align-content: center;
+    background: none;
+    border: 0;
+    padding: 8px;
+    width: 34px;
+    height: 40px;
+  }
+  .menu-toggle span {
+    height: 1px;
+    background: black;
+    width: 20px;
+    transition: transform .2s,opacity .2s;
+  }
+  .menu-toggle[aria-expanded=true] span:first-child {
+    transform: translateY(5px) rotate(45deg);
+  }
+  .menu-toggle[aria-expanded=true] span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle[aria-expanded=true] span:last-child {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+  .mobile-menu button {
+    border: 0;
+    background: none;
+    padding: 0;
+  }
+  .mobile-menu .menu-contact {
+    color: #cb633f;
+  }
+  .mobile-menu .decor {
+    top: auto;
+    bottom: -60px;
+    right: -70px;
+  }
+  .footer nav {
+    display: none;
+  }
+  .footer .socials {
+    order: -1;
+  }
+  .footer .logo {
+    width: 150px;
+  }
+  .split {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-block: 40px;
+    text-align: center;
+  }
+  .split h2 {
+    margin-bottom: 20px;
+  }
+  .content-photo {
+    max-height: 350px;
+  }
+  .back-link {
+    margin: 12px 0 24px;
+  }
+  .back-top {
+    width: 38px;
+    height: 38px;
+    right: 14px;
+    bottom: 14px;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 29px;
+  }
+  .header {
+    height: 72px;
+    gap: 18px;
+    position: relative;
+    z-index: 40;
+  }
+  .mobile-menu.is-open {
+    display: block;
+    position: fixed;
+    inset: 72px 0 0;
+    background: #fff8f6;
+    z-index: 35;
+    padding: 30px 25px;
+    isolation: isolate;
+    overflow: hidden;
+    top: 72px;
+    overflow-y: auto;
+    padding-top: 24px;
+  }
+  .mobile-menu nav {
+    display: grid;
+    gap: 20px;
+    justify-items: start;
+  }
+  .mobile-menu nav a,.mobile-menu nav button {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .hero-grid {
+    gap: 0;
+  }
+  .hero-art {
+    height: clamp(280px,90vw,400px);
+  }
+  .hero-photo {
+    object-fit: contain;
+  }
+  .hero-copy .intro {
+    max-width: 370px;
+    margin-inline: auto;
+  }
+  .directions h2 {
+    text-align: left;
+  }
+  .lesson-card {
+    height: 125px;
+  }
+  .features {
+    justify-items: start;
+    padding-inline: 30px;
+  }
+  .feature {
+    width: auto;
+  }
+  .story .split {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    gap: 15px;
+    padding-block: 32px;
+  }
+  .story .copy,.story:not(:has(.reverse)) .copy,.story .reverse .copy {
+    order: 2;
+  }
+  .story .photo-wrap {
+    order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .story .content-photo {
+    width: min(100%,330px);
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+  }
+  .story .copy {
+    width: 100%;
+    text-align: center;
+  }
+  .about-intro .split {
+    gap: 12px;
+  }
+  .about-intro .copy {
+    display: contents;
+  }
+  .about-intro .content-photo {
+    max-height: 310px;
+  }
+  .about-intro h1,.about-intro .about-lead {
+    text-align: center;
+  }
+  .lesson-intro .split {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-block: 25px;
+  }
+  .lesson-intro .photo-wrap {
+    order: 0;
+    width: 100%;
+  }
+  .lesson-intro .copy {
+    order: 1;
+    width: 100%;
+  }
+  .lesson-intro .content-photo {
+    max-height: 250px;
+  }
+  .formats {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .formats>div {
+    min-height: 100px;
+  }
+  .formats span {
+    font-size: 10px;
+  }
+  .schedule .split {
+    padding-block: 32px;
+  }
+  .lesson-contact {
+    padding-bottom: 25px;
+  }
+  .lesson-contact .back-link {
+    display: inline-block;
+  }
+  .footer {
+    padding-block: 25px;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero-art .photo-ornament {
+    width: 90%;
+    height: 85%;
+    left: 5%;
+    top: 5%;
+  }
+  .story .photo-wrap .photo-ornament {
+    width: min(85%,300px);
+    height: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .story .photo-wrap .decor {
+    width: 130px;
+    top: 5%;
+    right: 0;
+  }
+  .photo-wrap .content-photo {
+    max-width: 100%;
+    object-fit: contain;
+  }
+  .about-intro .photo-wrap {
+    order: 0;
+  }
+  .about-intro .photo-wrap .content-photo {
+    width: 88%;
+    max-height: 280px;
+  }
+  .about-intro .photo-wrap .photo-ornament {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  .story.surface .photo-wrap .photo-ornament {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(-1);
+  }
+  .lesson-intro .photo-wrap .photo-ornament {
+    width: 95%;
+    left: 2%;
+  }
+  .mobile-menu {
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
+  }
+  .index-page .hero-art {
+    overflow: visible;
+  }
+  .index-page .hero-photo {
+    object-fit: contain;
+    object-position: center bottom;
+  }
+  .socials button,.socials button img {
+    width: 32px;
+    height: 33px;
+    flex-basis: 32px;
+  }
+}
+/* Адаптация: (max-width: 600px) */
+@media (max-width: 600px) {
+  .about-intro {
+    background: white;
+  }
+  .about-intro .back-link {
+    display: none;
+  }
+  .about-intro .split {
+    display: flex;
+    flex-direction: column;
+  }
+  .about-intro .copy {
+    display: contents;
+  }
+  .about-intro h1 {
+    order: -3;
+    margin: 15px 0 0;
+  }
+  .about-intro .about-lead {
+    order: -2;
+    margin: 10px 0 20px !important;
+    font-size: 14px;
+  }
+  .about-intro .photo-wrap {
+    margin-bottom: 15px;
+  }
+  .about-intro .copy p {
+    margin-top: 0;
+  }
+  .story:not(:has(.reverse)) .copy,
+  .story .reverse .copy {
+    order: 2;
+  }
+  .story .content-photo {
+    height: 300px;
+  }
+  .story.surface {
+    background: white;
+  }
+  .story .split {
+    gap: 25px;
+  }
+  .story h2 {
+    font-size: 27px;
+  }
+  .story .photo-wrap .decor {
+    width: 180px;
+  }
+  .about-intro > .decor {
+    width: 150px;
+    right: -95px;
+    top: 40px;
+  }
+ .story .reverse .photo-wrap > .decor {
+  width: 100%;
+  height: auto;
+  top: 0;
+  right: 0;
+  left: auto;
+}
+.story:last-of-type .photo-wrap > .decor {
+  width: 220px;
+  height: auto;
+  left: 0;
+  right: auto;
+  top: 0;
+}
+  .about-page main > .container:last-child {
+    min-height: 125px;
+  }
+  .about-page main > .container:last-child::before {
+    width: 135px;
+    height: 135px;
+    left: auto;
+    right: 200px;
+    top: -1px;
+  }
+  .about-page main > .container:last-child::after {
+    width: 250px;
+    height: 250px;
+    left: auto;
+    right: 0;
+    top: 0;
+  }
+}
+.about-page .story:nth-of-type(2) .photo-wrap > .decor {
+  width: 190px;
+  height: auto;
+  top: 20px;
+  left: auto;
+  right: 0;
+}
+/* Адаптация: (min-width:1001px) */
+@media (min-width:1001px) {
+  .hero-grid {
+    min-height: 590px;
+  }
+  .hero-art {
+    height: 570px;
+  }
+  .lesson-card {
+    height: 320px;
+  }
+  .features {
+    margin-top: 30px;
+  }
+  .story .split {
+    padding-block: 40px;
+  }
+  .index-page .hero {
+    overflow: hidden;
+  }
+  .index-page .hero-grid {
+    min-height: 730px;
+    padding-bottom: 0;
+    grid-template-columns: minmax(0,1.05fr) minmax(0,1fr);
+    align-items: center;
+  }
+  .index-page .hero-art {
+    height: 730px;
+    min-height: 730px;
+    align-self: end;
+    overflow: visible;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .index-page .hero-art .hero-photo {
+    width: auto;
+    height: 100%;
+    max-height: none;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    flex-shrink: 0;
+  }
+  .index-page .hero-art .photo-ornament {
+    height: 72%;
+    top: 12%;
+    left: 3%;
+    width: 94%;
+  }
+}
+/* Адаптация: (max-width:1000px) and (min-width:601px) */
+@media (max-width:1000px) and (min-width:601px) {
+  .about-intro {
+    background: var(--surface);
+  }
+  .container {
+    width: calc(100% - 48px);
+  }
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .hero-art {
+    height: 400px;
+  }
+  .lesson-cards {
+    gap: 14px;
+  }
+  .features {
+    gap: 12px;
+  }
+  .split {
+    gap: 24px;
+  }
+  h1 {
+    font-size: clamp(30px,4.5vw,46px);
+  }
+  h2 {
+    font-size: clamp(25px,3.5vw,38px);
+  }
+  .story .content-photo {
+    max-height: 350px;
+  }
+  .formats {
+    gap: 9px;
+  }
+  .formats img {
+    width: 56px;
+    height: 56px;
+  }
+}
+/* Адаптация: (max-width:359px) */
+@media (max-width:359px) {
+  .container {
+    width: calc(100% - 28px);
+  }
+  h1 {
+    font-size: 31px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  .formats {
+    gap: 5px;
+  }
+  .formats img {
+    width: 42px;
+    height: 42px;
+  }
+  .lesson-card h3 {
+    font-size: 16px;
+  }
+  .mobile-menu.is-open {
+    padding-inline: 18px;
+  }
+}
+/* Адаптация: (prefers-reduced-motion:reduce) */
+@media (prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .button,.contact-link {
+    transition: none;
+  }
+}
+/* Адаптация: (min-width:601px) and (max-width:1000px) */
+@media (min-width:601px) and (max-width:1000px) {
+  .index-page .hero-grid {
+    min-height: 570px;
+    padding-bottom: 0;
+  }
+  .index-page .hero-art {
+    height: 570px;
+    align-self: end;
+  }
+  .index-page .hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+  }
+}
+/* Скрываем «Запись» только в бургер-меню */
+.mobile-menu nav > button[data-contact]:not(.menu-contact) {
+  display: none;
+}

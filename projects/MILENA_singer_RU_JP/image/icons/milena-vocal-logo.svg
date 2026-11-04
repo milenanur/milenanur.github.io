@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" data-name="レイヤー_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 280 85">
+  <!-- Generator: Adobe Illustrator 30.8.2, SVG Export Plug-In . SVG Version: 2.1.4 Build 7)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #111;
+        fill-rule: evenodd;
+      }
+
+      .st0, .st1 {
+        stroke: #111;
+      }
+
+      .st2 {
+        font-size: 52.06px;
+      }
+
+      .st2, .st3 {
+        font-family: Montserrat-Medium, Montserrat;
+        font-weight: 500;
+      }
+
+      .st1 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-width: 6px;
+      }
+
+      .st3 {
+        font-size: 38.34px;
+      }
+    </style>
+  </defs>
+  <path class="st0" d="M33.46,4.91c7.85,0,14.22,5.54,14.22,12.38v27.25c0,6.84-6.37,12.38-14.22,12.38s-14.22-5.54-14.22-12.38v-27.25c0-6.84,6.37-12.38,14.22-12.38ZM23.86,15.74h19.2c-1.46-4.62-6.93-7.33-12.24-6.06-3.39.81-6.03,3.11-6.96,6.06ZM23.51,19.77v3.72h19.91v-3.72h-19.91ZM23.51,27.82v3.72h19.91v-3.72h-19.91ZM23.51,35.87v3.72h19.91v-3.72h-19.91Z"/>
+  <path class="st1" d="M11.83,37.74v7.9c0,9.97,9.84,18.06,21.99,18.06s21.99-8.08,21.99-18.06v-7.9M33.82,63.69v11.29M23.51,75.55h20.61"/>
+  <text class="st2" transform="translate(60.26 45.12)"><tspan x="0" y="0">MILENA</tspan></text>
+  <text class="st3" transform="translate(65.6 76.39) scale(.88 1)"><tspan x="0" y="0">vocal studio</tspan></text>
+</svg>

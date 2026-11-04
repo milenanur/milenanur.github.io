@@ -1,0 +1,647 @@
+/* videos.css: стили страницы; общие правила находятся в style.css.
+   Адаптивные настройки: ищите @media (планшет / телефон). */
+/* ==========================================================
+
+   ВИДЕО — только videos.html. Общие стили: style.css.
+
+   ПК: от 1025px; планшет: 601–1024px; телефон: до 600px.
+
+   \========================================================== */
+
+.videos-page .video-main { padding-top: 24px; }
+
+.videos-page .video-breadcrumb {
+
+  display: inline-block;
+
+  padding-block: 8px;
+
+  font-size: 16px;
+
+}
+
+.videos-page .video-breadcrumb:hover { color: var(--pink); }
+
+.videos-page .video-intro { margin: 8px 0 28px; }
+
+.videos-page .video-intro h1 {
+
+  color: var(--pink);
+
+  font-family: var(--font-heading);
+
+  font-size: clamp(50px, 6.6vw, 96px);
+
+  font-weight: 900;
+
+  letter-spacing: -.045em;
+
+  line-height: 1.2;
+
+}
+
+/* Пустой span: геометрический круг, не символ точки шрифта. */
+
+.videos-page .video-period {
+
+  display: inline-block;
+
+  width: .22em;
+
+  height: .22em;
+
+  margin-left: .25em;
+
+  border-radius: 50%;
+
+  background: currentColor;
+
+  vertical-align: -.02em;
+
+}
+
+.videos-page .video-intro > p { margin-top: 12px; font-size: 18px; }
+
+.videos-page .video-works > .section-title { margin-bottom: 28px; }
+
+.videos-page .video-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 36px 40px;
+
+  align-items: start;
+
+}
+
+.videos-page .video-card { display: block; min-width: 0; }
+
+.videos-page .video-preview {
+
+  position: relative;
+
+  isolation: isolate;
+
+  overflow: hidden;
+
+  aspect-ratio: 16 / 9;
+
+  background: var(--image-background);
+
+}
+
+.videos-page .video-placeholder {
+
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  color: var(--text-secondary);
+
+  background: linear-gradient(135deg, var(--surface), var(--image-background));
+
+  font-size: 14px;
+
+}
+
+.videos-page .video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  border: 2px solid #ff6b9b;
+  border-radius: 50%;
+  background: rgba(8, 13, 16, 0.78);
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.6),
+              0 0 18px rgba(255, 107, 155, 0.35);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: background .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+
+.videos-page .video-play::after {
+  content: "";
+  margin-left: 5px;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 19px solid #fff;
+}
+
+/* Сначала скрыта: не показываем значок сломанной картинки. */
+
+.videos-page .video-image {
+
+  position: absolute;
+
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: contain;
+
+  opacity: 0;
+
+}
+
+.videos-page .video-image.is-loaded { opacity: 1; }
+
+/* После загрузки фотографии убираем надпись-заглушку. */
+.videos-page .video-preview:has(.video-image.is-loaded) .video-placeholder {
+  visibility: hidden;
+}
+
+
+.videos-page .video-caption {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 12px 2px 0;
+
+}
+
+.videos-page .video-description { min-width: 0; }
+
+.videos-page .video-caption h3 {
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  transition: color .25s ease;
+
+}
+
+.videos-page .video-caption p {
+
+  color: var(--text-secondary);
+
+  font-size: 15px;
+
+  line-height: 1.5;
+
+}
+
+.videos-page .video-arrow {
+
+  flex: 0 0 28px;
+
+  width: 28px;
+
+  height: 28px;
+
+  margin-top: 3px;
+
+  object-fit: contain;
+
+  transition: transform .25s ease;
+
+}
+
+.videos-page .video-card:focus-visible h3 { color: var(--pink); }
+
+.videos-page .video-card:focus-visible .video-arrow { transform: translate(4px, -4px); }
+
+.videos-page .page-return { margin-top: 34px; border-top: 1px solid var(--divider); }
+
+.videos-page .video-sr-only {
+
+  position: absolute;
+
+  width: 1px;
+
+  height: 1px;
+
+  padding: 0;
+
+  margin: -1px;
+
+  overflow: hidden;
+
+  clip-path: inset(50%);
+
+  white-space: nowrap;
+
+  border: 0;
+
+}
+
+@media (hover: hover) {
+
+  .videos-page .video-card:hover h3 { color: var(--pink); }
+
+  .videos-page .video-card:hover .video-arrow { transform: translate(4px, -4px); }
+
+  .videos-page .video-card:hover .video-play {
+    border-color: #fff;
+    background: rgba(255, 73, 139, 0.95);
+    box-shadow: 0 6px 26px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(255, 73, 139, 0.7);
+  }
+
+}
+
+
+
+/* Розовый блок и футер — из актуальной страницы панфлетов. */
+
+.videos-page .video-contact {
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) auto;
+
+  align-items: center;
+
+  gap: 2px 24px;
+
+  padding: 24px 32px;
+
+  border-radius: 18px;
+
+  /* Горизонтальная сакура — фон по центру, 60% */
+
+  background:
+
+    url("../images/decorations/sakura-horizontal.svg")
+
+    center center / 60% auto no-repeat,
+
+    var(--pink);
+
+  color: #fff;
+
+}
+
+/* Белый заголовок слева */
+
+.videos-page .video-contact h2 {
+
+  grid-column: 1;
+
+  grid-row: 1;
+
+}
+
+/* Белое описание слева */
+
+.videos-page .video-contact p {
+
+  grid-column: 1;
+
+  grid-row: 2;
+
+}
+
+/* Чёрная кнопка справа */
+
+.videos-page .video-contact .button {
+
+  grid-column: 2;
+
+  grid-row: 1 / 3;
+
+  justify-self: end;
+
+  margin: 0;
+
+}
+
+/* ==================== ПОДВАЛ ==================== */
+
+.videos-page .footer {
+
+  margin-top: 24px;
+
+}
+
+.videos-page .footer-inner {
+
+  padding-block: 20px;
+
+}
+
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  .videos-page .video-intro h1 { font-size: clamp(38px, 6.8vw, 68px); }
+
+  .videos-page .video-intro > p { font-size: 15px; }
+
+  .videos-page .video-grid { gap: 28px 22px; }
+
+  .videos-page .video-caption h3 { font-size: 16px; }
+
+  .videos-page .video-caption p { font-size: 12px; }
+
+  .videos-page .video-arrow { width: 24px; height: 24px; flex-basis: 24px; }
+
+  .videos-page .video-contact { padding: 20px; gap: 4px 16px; }
+
+  .videos-page .video-contact h2,
+
+  .videos-page .video-contact p { font-size: 17px; }
+
+}
+
+@media (max-width: 600px) {
+
+  .videos-page .video-main { padding-top: 12px; }
+
+  .videos-page .video-breadcrumb { font-size: 14px; }
+
+  .videos-page .video-intro { margin: 12px 0 24px; }
+
+  .videos-page .video-intro h1 { font-size: clamp(34px, 9.6vw, 54px); }
+
+  .videos-page .video-intro > p { margin-top: 10px; font-size: 12px; line-height: 1.6; }
+
+  .videos-page .video-works > .section-title { margin-bottom: 16px; font-size: 24px; }
+
+  .videos-page .video-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+
+  .videos-page .video-caption { gap: 10px; padding-top: 8px; }
+
+  .videos-page .video-caption h3 { font-size: 16px; }
+
+  .videos-page .video-caption p { font-size: 12px; }
+
+  .videos-page .video-arrow { width: 22px; height: 22px; flex-basis: 22px; }
+
+  .videos-page .video-play { width: 60px; height: 60px; }
+
+  .videos-page .page-return { margin-top: 24px; }
+
+  /* Те же настройки контактов, что в pamphlets.css. */
+
+  .videos-page .video-contact {
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 6px 12px;
+
+    padding: 16px 12px;
+
+    border-radius: 12px;
+
+    background-image: none;
+
+  }
+
+  .videos-page .video-contact h2 { font-size: 17px; }
+
+  .videos-page .video-contact p { font-size: 13px; font-weight: 400; }
+
+  .videos-page .video-contact .button {
+
+    min-width: 0;
+
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 10px 8px;
+
+    gap: 6px;
+
+    font-size: 14px;
+
+  }
+
+  .videos-page .video-contact .button img { width: 20px; height: 18px; }
+
+  .videos-page .footer .language { margin-left: 0; font-size: 11px; }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .videos-page .video-card .video-arrow { transform: none; }
+
+}
+
+
+
+/* ==========================================================
+
+   ОКНО YOUTUBE — открывается поверх текущей страницы
+
+   \========================================================== */
+
+html:has(.videos-page .video-viewer[open]) {
+
+  overflow: hidden;
+
+}
+
+.videos-page .video-viewer {
+
+  width: min(1100px, calc(100vw - 24px));
+
+  max-width: none;
+
+  max-height: calc(100dvh - 24px);
+
+  margin: auto;
+
+  padding: 0;
+
+  overflow: auto;
+
+  overscroll-behavior: contain;
+
+  border: 1px solid var(--pink-dark);
+
+  border-radius: 16px;
+
+  color: var(--text);
+
+  background: var(--background);
+
+}
+
+.videos-page .video-viewer::backdrop {
+
+  background: rgb(0 0 0 / 85%);
+
+}
+
+.videos-page .video-viewer-toolbar {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+  padding: 12px 16px;
+
+}
+
+.videos-page .video-viewer-toolbar h2 {
+
+  min-width: 0;
+
+  font-size: 18px;
+
+  line-height: 1.5;
+
+}
+
+.videos-page .video-viewer-close {
+
+  display: grid;
+
+  place-items: center;
+
+  flex: 0 0 44px;
+
+  width: 44px;
+
+  height: 44px;
+
+  padding: 0;
+
+  border: 1px solid var(--pink-dark);
+
+  border-radius: 50%;
+
+  color: var(--pink);
+
+  background: var(--surface);
+
+  font-size: 30px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition: background-color .25s ease;
+
+}
+
+.videos-page .video-viewer-close:hover {
+
+  background-color: rgb(243 107 155 / 20%);
+
+}
+
+.videos-page .video-viewer-player {
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  max-height: calc(100dvh - 190px);
+
+  background: #000;
+
+}
+
+.videos-page .video-viewer-player iframe {
+
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  border: 0;
+
+}
+
+.videos-page .video-viewer-footer {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 8px 16px;
+
+  padding: 12px 16px;
+
+}
+
+.videos-page .video-viewer-footer p {
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+
+  line-height: 1.6;
+
+}
+
+.videos-page .video-viewer-youtube {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 44px;
+
+  padding: 8px 14px;
+
+  border: 1px solid var(--pink-dark);
+
+  border-radius: 999px;
+
+  color: var(--pink);
+
+  font-size: 14px;
+
+  transition: background-color .25s ease;
+
+}
+
+.videos-page .video-viewer-youtube:hover {
+
+  background-color: rgb(243 107 155 / 15%);
+
+}
+
+@media (max-width: 600px) {
+
+  .videos-page .video-viewer { border-radius: 12px; }
+
+  .videos-page .video-viewer-toolbar { padding: 8px 12px; gap: 8px; }
+
+  .videos-page .video-viewer-toolbar h2 { font-size: 15px; }
+
+  .videos-page .video-viewer-footer { padding: 8px 12px; }
+
+}

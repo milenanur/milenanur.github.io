@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<!-- ==========================================================
+     ГЛАВНАЯ — японская версия (index.html)
+     Тексты и ссылки редактируются здесь. Общие стили: css/style.css.
+     Стили страницы и скрипты подключены в разделе head.
+     ========================================================== -->
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="ミレーナのポートフォリオ。Webデザイン、グラフィック制作、動画編集の制作実績をご紹介します。" name="description"/>
+<title>MILENA | ポートフォリオ</title>
+<!-- Шрифты -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&amp;family=Noto+Sans+JP:wght@400;600;900&amp;family=Oswald:wght@700&amp;display=swap" rel="stylesheet"/>
+<!-- Стили сайта -->
+<link href="css/style.css" rel="stylesheet"/>
+<!-- JavaScript -->
+<script defer="" src="js/main.js"></script>
+<!-- Только японская главная: читаемые подписи карточек на телефоне. -->
+<style>
+@media (max-width: 600px) {
+  html:lang(ja) .works-grid .work-description {
+    padding: 8px 8px 32px 12px;
+  }
+  html:lang(ja) .works-grid .work-description h3 {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 7px;
+    overflow-wrap: anywhere;
+  }
+  html:lang(ja) .works-grid .work-description p {
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+}
+</style>
+<!-- Две готовые работы (пекарня и певица) расположены по центру.
+Карточка сайта школы временно скрыта до завершения проекта. -->
+<style>
+  .works-grid > [hidden] { display: none !important; }
+  @media (min-width: 1025px) {
+    .works-grid--featured { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .works-grid--featured > .work-card { grid-column: span 2; }
+    .works-grid--featured > .work-card--bakery { grid-column: 2 / span 2; }
+    .works-grid--featured > .work-card--singer { grid-column: 4 / span 2; }
+  }
+</style>
+</head>
+<body>
+<!-- ==================== ШАПКА ==================== -->
+<header class="header" id="top">
+<div class="container header-inner">
+<a aria-label="MILENA ホーム" class="logo" href="index.html">
+          MILENA
+        </a>
+<!-- Кнопка меню телефона -->
+<button aria-controls="main-navigation" aria-expanded="false" aria-label="メニューを開く" class="menu-button" hidden="" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<!-- Основная навигация -->
+<nav aria-label="メインメニュー" class="navigation" id="main-navigation">
+<a class="mobile-only" href="index.html">
+            トップ
+          </a>
+<a class="navigation-works" href="#works">
+            制作実績
+          </a>
+<div class="navigation-submenu mobile-only">
+<a href="#websites">Webサイト</a>
+<a href="banners.html">バナー</a>
+<a href="pamphlets.html">チラシ・パンフレット</a>
+<a href="videos.html">動画</a>
+</div>
+<a href="about.html">私について</a>
+<a href="contact.html">お問い合わせ</a>
+<!-- Русскую версию подключим позже -->
+<div class="navigation-language mobile-only">
+<a aria-current="page" class="language-jp" href="index.html" lang="ja">JP</a>
+<span aria-hidden="true"> / </span>
+<a class="language-ru" href="ru/index.html" lang="ru">RU</a>
+</div>
+</nav>
+<div class="language">
+<a aria-current="page" class="language-jp" href="index.html" lang="ja">JP</a>
+<span aria-hidden="true"> / </span>
+<a class="language-ru" href="ru/index.html" lang="ru">RU</a>
+</div>
+</div>
+</header>
+<main class="container">
+<!-- ==================== ПЕРВЫЙ ЭКРАН ==================== -->
+<section aria-labelledby="hero-title" class="hero">
+<div class="hero-text">
+<h1 id="hero-title">
+<span>デザイン<span class="dot">.</span></span>
+<span class="hero-white">
+              グラフィック<span class="dot">.</span>
+</span>
+<span>動画編集<span class="dot">.</span></span>
+</h1>
+<p class="hero-description">
+<span>ミレーナ</span>
+<span>Webデザイン・動画編集</span>
+</p>
+<a class="button button-pink" href="#works">
+            制作実績を見る
+            <img alt="" src="images/icons/arrow-right.svg"/>
+</a>
+</div>
+<!-- Портрет, розовое облако и блик -->
+<div class="hero-portrait">
+<img alt="" class="portrait-cloud" src="images/photos/cloud.png"/>
+<img alt="ミレーナ" class="portrait-photo" fetchpriority="high" src="images/photos/mila2.png"/>
+<img alt="" class="portrait-swoosh" src="images/photos/pink-swoosh.PNG"/>
+</div>
+<!-- Краткая информация -->
+<ul class="hero-features">
+<li>
+<img alt="" src="images/icons/monitor.svg"/>
+<span class="feature-text">
+<span>Web・グラフィック</span>
+<span>・動画</span>
+</span>
+</li>
+<li>
+<img alt="" src="images/icons/messages-square.svg"/>
+<span class="feature-text">
+<span>日本語</span>
+<span>/ ロシア語</span>
+</span>
+</li>
+<li>
+<img alt="" src="images/icons/map-pin-pink.svg"/>
+<span class="feature-text">
+<span>神戸、</span>
+<span>日本</span>
+</span>
+</li>
+</ul>
+<!-- Указатель вниз -->
+<a aria-label="制作実績へスクロール" class="scroll-down" href="#works">
+<span></span>
+</a>
+</section> <!-- конец hero -->
+<!-- ==================== РАБОТЫ ==================== -->
+<section aria-labelledby="works-title" class="section works" id="works">
+<h2 class="section-title" id="works-title">
+          制作実績
+        </h2>
+<div class="works-grid works-grid--featured">
+<!-- 1. Сайт школы -->
+<!-- Когда будет адрес сайта, заменим article на a со ссылкой -->
+<article class="work-card work-link" hidden aria-hidden="true">
+<img alt="ロシア語学校のWebサイトデザイン" class="work-image" loading="lazy" src="images/photos/card-school.webp"/>
+<div class="work-description">
+<h3>学校サイト</h3>
+<p>
+                ロシア語を通して広がる、子どもたちの世界。<br/>
+                教室の活動や魅力を紹介するサイト。
+              </p>
+<img alt="" class="work-arrow" src="images/icons/arrow-up-right.svg"/>
+</div>
+</article>
+<!-- 2. Сайт пекарни -->
+<a class="work-card work-link work-card--bakery" id="websites" href="projects/BACERY/index.html?lang=ja" target="_blank" rel="noopener noreferrer">
+<img alt="ベーカリーのWebサイトデザイン" class="work-image" loading="lazy" src="images/photos/card-bacery.webp"/>
+<div class="work-description">
+<h3>ベーカリーサイト</h3>
+<p>
+                焼きたてパンのおいしさを伝える、<br/>
+                温かみのあるサイト。
+              </p>
+<img alt="" class="work-arrow" src="images/icons/arrow-up-right.svg"/>
+</div>
+</a>
+<!-- 3. Сайт певицы -->
+<a class="work-card work-link work-card--singer" href="projects/MILENA_singer_RU_JP/ja/index.html" target="_blank" rel="noopener noreferrer">
+<img alt="シンガーのWebサイトデザイン" class="work-image" loading="lazy" src="images/photos/card-singer.webp"/>
+<div class="work-description">
+<h3>シンガーサイト</h3>
+<p>
+                歌とレッスンの魅力を紹介する、<br/>
+                歌手の個人サイト。
+              </p>
+<img alt="" class="work-arrow" src="images/icons/arrow-up-right.svg"/>
+</div>
+</a>
+<!-- 4. Баннеры -->
+<a class="work-card work-link" href="banners.html">
+<img alt="バナーデザインの作品一覧" class="work-image" loading="lazy" src="images/photos/card-banner.webp"/>
+<div class="work-description">
+<h3>バナーデザイン</h3>
+<p>
+                目を引くデザインと、<br/>
+                伝わる言葉を大切に。
+              </p>
+<img alt="" class="work-arrow" src="images/icons/arrow-up-right.svg"/>
+</div>
+</a>
+<!-- 5. Панфлеты и буклеты -->
+<a class="work-card work-link" href="pamphlets.html">
+<img alt="チラシ・パンフレットの作品一覧" class="work-image" loading="lazy" src="images/photos/card-pamphlet.webp"/>
+<div class="work-description">
+<h3>パンフレット</h3>
+<p>
+                必要な情報をわかりやすく、<br/>
+                手に取りたくなる一冊に。
+              </p>
+<img alt="" class="work-arrow" src="images/icons/arrow-up-right.svg"/>
+</div>
+</a>
+<!-- 6. Видео -->
+<a class="work-card work-link" href="videos.html">
+<img alt="動画編集の作品一覧" class="work-image" loading="lazy" src="images/photos/card-premiere.webp"/>
+<div class="work-description">
+<h3>動画編集</h3>
+<p>
+                映像と音で魅力を伝え、<br/>
+                心に残る作品に仕上げます。
+              </p>
+<img alt="" class="work-arrow" src="images/icons/arrow-up-right.svg"/>
+</div>
+</a>
+</div>
+</section>
+<!-- ==================== ПРОГРАММЫ ==================== -->
+<section aria-labelledby="tools-title" class="section tools">
+<h2 class="section-title" id="tools-title">
+          使用ツール
+        </h2>
+<ul class="tools-list">
+<li>
+<img alt="" loading="lazy" src="images/icons/adobe-photoshop-svgrepo-com.svg"/>
+<span>Photoshop</span>
+</li>
+<li>
+<img alt="" loading="lazy" src="images/icons/adobe-illustrator-svgrepo-com.svg"/>
+<span>Illustrator</span>
+</li>
+<li>
+<img alt="" loading="lazy" src="images/icons/html-svgrepo-com.svg"/>
+<span>HTML</span>
+</li>
+<li>
+<img alt="" loading="lazy" src="images/icons/html-svgrepo-css.svg"/>
+<span>CSS</span>
+</li>
+<li>
+<img alt="" loading="lazy" src="images/icons/figma-svgrepo-com.svg"/>
+<span>Figma</span>
+</li>
+<li>
+<img alt="" loading="lazy" src="images/icons/visual-studio-code-svgrepo-com.svg"/>
+<span>VS Code</span>
+</li>
+<li>
+<img alt="" loading="lazy" src="images/icons/adobe-premiere-svgrepo-com.svg"/>
+<span>Premiere Pro</span>
+</li>
+<li>
+<img alt="" loading="lazy" src="images/icons/wordpress-svgrepo-com.svg"/>
+<span>WordPress</span>
+</li>
+</ul>
+</section>
+<!-- ==================== ОБО МНЕ ==================== -->
+<section aria-labelledby="about-title" class="section about">
+<h2 class="section-title" id="about-title">
+          私について
+        </h2>
+<div class="about-content">
+<div class="about-photo">
+<img alt="" class="about-cloud" loading="lazy" src="images/photos/cloud.png"/>
+<img alt="ミレーナのプロフィール写真" class="about-person" loading="lazy" src="images/photos/mila2.png"/>
+</div>
+<div class="about-text">
+<p>
+              神戸を拠点に、Webデザインと制作に取り組んでいます。<br/>
+              教育・文化活動で培った経験を活かし、<br/>
+              見る人に伝わるデザインを大切にしています。
+            </p>
+<a class="button button-outline" href="about.html">
+              プロフィールを見る
+              <img alt="" src="images/icons/arrow-right.svg"/>
+</a>
+</div>
+</div>
+<img alt="" class="about-sakura" loading="lazy" src="images/decorations/sakura-horizontal.svg"/>
+</section>
+<!-- ==================== ПРОЦЕСС И КОНТАКТЫ ==================== -->
+<div class="bottom-grid">
+<section aria-labelledby="process-title" class="section process">
+<h2 class="section-title" id="process-title">
+            制作の流れ
+          </h2>
+<ol class="process-list">
+<li>
+<span class="step-number">01</span>
+<h3>ヒアリング</h3>
+<p>ご要望や目的を丁寧に確認します。</p>
+</li>
+<li>
+<span class="step-number">02</span>
+<h3>企画</h3>
+<p>構成やデザインの方向性を整理します。</p>
+</li>
+<li>
+<span class="step-number">03</span>
+<h3>デザイン</h3>
+<p>方向性に沿ってデザインを制作します。</p>
+</li>
+<li>
+<span class="step-number">04</span>
+<h3>制作・確認</h3>
+<p>確認と修正を重ね、仕上げます。</p>
+</li>
+</ol>
+</section>
+<aside aria-labelledby="contact-title" class="contact-card">
+<h2 id="contact-title">お問い合わせ</h2>
+<p>お気軽にご連絡ください。</p>
+<a class="button button-dark" href="contact.html">
+            メッセージを送る
+            <img alt="" src="images/icons/arrow-right.svg"/>
+</a>
+</aside>
+</div>
+<!-- КНОПКА ВОЗВРАТА НА ГЛАВНУЮ -->
+<div class="page-return">
+<a class="button button-outline button-top" href="#top">
+    ページの先頭へ
+    <img alt="" src="images/icons/arrow-up.svg"/>
+</a>
+</div>
+</main>
+<!-- ==================== ПОДВАЛ ==================== -->
+<footer class="footer">
+<div class="container footer-inner">
+<a class="logo" href="index.html">
+          MILENA
+        </a>
+<p class="footer-location">
+<img alt="" src="images/icons/map-pin-white.svg"/>
+<span>神戸、日本</span>
+</p>
+</div>
+</footer>
+</body>
+</html>

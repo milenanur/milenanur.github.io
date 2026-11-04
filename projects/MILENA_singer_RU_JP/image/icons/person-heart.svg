@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" data-name="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 160 160">
+  <!-- Generator: Adobe Illustrator 30.8.2, SVG Export Plug-In . SVG Version: 2.1.4 Build 7)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+        stroke: url(#_名称未設定グラデーション_2);
+        stroke-linecap: round;
+        stroke-width: 14px;
+      }
+
+      .st1 {
+        fill: url(#_名称未設定グラデーション_291);
+      }
+
+      .st2 {
+        fill: url(#_名称未設定グラデーション_29);
+      }
+    </style>
+    <linearGradient id="_名称未設定グラデーション_29" data-name="名称未設定グラデーション 29" x1="-41.93" y1="122" x2="148.76" y2="122" gradientTransform="translate(0 159) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset=".09" stop-color="#081d35"/>
+      <stop offset=".17" stop-color="#102b4c"/>
+      <stop offset=".51" stop-color="#3977c5"/>
+      <stop offset=".7" stop-color="#e98c69"/>
+      <stop offset=".85" stop-color="#df8d73"/>
+    </linearGradient>
+    <linearGradient id="_名称未設定グラデーション_2" data-name="名称未設定グラデーション 2" x1="6.52" y1="20.31" x2="153.71" y2="148.08" gradientTransform="translate(0 159) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#081d35"/>
+      <stop offset=".35" stop-color="#3977c5"/>
+      <stop offset=".66" stop-color="#7797d7"/>
+      <stop offset="1" stop-color="#e98c69"/>
+    </linearGradient>
+    <linearGradient id="_名称未設定グラデーション_291" data-name="名称未設定グラデーション 29" x1="5.55" y1="39.39" x2="215.97" y2="39.39" xlink:href="#_名称未設定グラデーション_29"/>
+  </defs>
+  <circle class="st2" cx="77" cy="37" r="23"/>
+  <path class="st0" d="M17,143c1-33,23-56,55-56"/>
+  <path class="st1" d="M113,99c-13-17-36,1-25,21,7,12,23,23,30,27,8-5,24-16,31-29,11-20-15-36-27-17l-4,6-5-8Z"/>
+</svg>

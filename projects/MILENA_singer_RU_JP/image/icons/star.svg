@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" data-name="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 160 160">
+  <!-- Generator: Adobe Illustrator 30.8.2, SVG Export Plug-In . SVG Version: 2.1.4 Build 7)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+        stroke: url(#_名称未設定グラデーション_10);
+        stroke-linejoin: round;
+        stroke-width: 10px;
+      }
+    </style>
+    <linearGradient id="_名称未設定グラデーション_10" data-name="名称未設定グラデーション 10" x1="6.89" y1="79" x2="173.43" y2="79" gradientTransform="translate(0 159) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#081d35"/>
+      <stop offset=".35" stop-color="#3977c5"/>
+      <stop offset=".57" stop-color="#7797d7"/>
+      <stop offset=".81" stop-color="#e98c69"/>
+    </linearGradient>
+  </defs>
+  <path class="st0" d="M80,13.97c2.9,0,5.5,1.7,6.7,4.4l17.2,35.2,38.8,5.6c6,.9,8.4,8.2,4,12.4l-28,27.3,6.6,38.6c1,6-5.3,10.5-10.7,7.7l-34.6-18.2-34.6,18.2c-5.4,2.8-11.7-1.7-10.7-7.7l6.6-38.6-28-27.3c-4.4-4.2-2-11.5,4-12.4l38.8-5.6,17.2-35.2c1.2-2.7,3.8-4.4,6.7-4.4Z"/>
+</svg>

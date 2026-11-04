@@ -1,0 +1,53 @@
+/* Локальные шрифты. font-weight: 400 — обычный, 500/600 — плотнее, 700 — жирный.
+   swap позволяет показать текст до загрузки файла шрифта. */
+
+/* Inter: тексты новостей. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/font-0.ttf) format('truetype');
+}
+
+/* Philosopher: декоративные заголовки, обычное и жирное начертания. */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/font-1.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Philosopher';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/font-2.ttf) format('truetype');
+}
+
+/* Roboto: основной текст, три начертания. */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(../fonts/font-3.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(../fonts/font-4.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(../fonts/font-5.ttf) format('truetype');
+}
