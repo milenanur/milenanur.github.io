@@ -1542,3 +1542,36 @@ body {
     transform-origin: 50% 52%;
   }
 }
+
+/* Mobile navigation: center the close symbol and remove the tap-induced square. */
+@media (max-width: 600px) {
+  .menu-dialog .menu-top .close-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    box-sizing: border-box;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    line-height: 1;
+    text-align: center;
+    border: 0;
+    background: transparent;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .menu-dialog .menu-top .close-menu:focus-visible {
+    outline: 2px solid var(--brown);
+    outline-offset: 2px;
+    border-radius: 50%;
+  }
+}
+@media (max-width: 600px) and (hover: none) and (pointer: coarse) {
+  .menu-dialog .menu-top .close-menu:focus-visible {
+    outline: none;
+  }
+}

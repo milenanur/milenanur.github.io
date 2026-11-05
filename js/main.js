@@ -70,6 +70,55 @@ function finishClose() {
     }
   });
 
+  // Mobile JP/RU switches the LANGUAGE OF THE OPEN MENU ONLY.
+  // It must not navigate to another page or close the menu.
+  const menuLanguageLinks = navigation.querySelectorAll(
+    ".navigation-language.mobile-only a.language-jp, .navigation-language.mobile-only a.language-ru"
+  );
+  const menuLabels = {
+    ja: ["トップ", "制作実績", "Webサイト", "バナー", "チラシ・パンフレット", "動画", "私について", "お問い合わせ"],
+    ru: ["Главная", "Мои работы", "Веб-сайты", "Баннеры", "Листовки и буклеты", "Видео", "Обо мне", "Контакты"]
+  };
+  const menuItems = [
+    ...navigation.querySelectorAll(":scope > a"),
+  ];
+  const submenuItems = [...navigation.querySelectorAll(".navigation-submenu.mobile-only > a")];
+  // Navigation structure: Home, Works, four submenu links, About, Contact.
+  const translatedItems = [menuItems[0], menuItems[1], ...submenuItems, menuItems[2], menuItems[3]];
+  let selectedMenuLanguage = isRussian ? "ru" : "ja";
+
+  function showMenuLanguage(language) {
+    selectedMenuLanguage = language;
+    const labels = menuLabels[language];
+    // Update visible labels and their destinations, without leaving the page now.
+    const prefix = language === "ru" ? (isRussian ? "" : "ru/") : (isRussian ? "../" : "");
+    const paths = ["index.html", "index.html#works", "index.html#websites", "banners.html", "pamphlets.html", "videos.html", "about.html", "contact.html"];
+    translatedItems.forEach((link, index) => {
+      if (!link) return;
+      link.textContent = labels[index];
+      link.setAttribute("href", prefix + paths[index]);
+    });
+    menuLanguageLinks.forEach((link) => {
+      const selected = (language === "ja" && link.classList.contains("language-jp")) ||
+        (language === "ru" && link.classList.contains("language-ru"));
+      link.setAttribute("aria-label", selected ? `${link.textContent.trim()} — выбран язык меню` : `${link.textContent.trim()} — переключить язык меню`);
+      link.style.color = selected ? "var(--pink)" : "var(--text)";
+      link.style.fontWeight = selected ? "700" : "400";
+    });
+  }
+
+  if (menuLanguageLinks.length === 2 && translatedItems.every(Boolean)) {
+    // Capturing intercepts clicks before the general close-menu handler below.
+    navigation.addEventListener("click", (event) => {
+      const langLink = event.target.closest(".navigation-language.mobile-only a");
+      if (!langLink) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      showMenuLanguage(langLink.classList.contains("language-jp") ? "ja" : "ru");
+    }, true);
+    showMenuLanguage(selectedMenuLanguage);
+  }
+
   navigation.addEventListener("click", (event) => {
     if (event.target.closest("a")) {
       closeMenu();

@@ -393,3 +393,159 @@ html:lang(ru) .contact-card p {
     font-size: 15px;
   }
 }
+
+/* ==========================================================
+   RU ABOUT — читабельность телефона (до 600px).
+   Только русская страница «Обо мне», PC/Tablet не меняем.
+   ========================================================== */
+@media (max-width: 600px) {
+  html:lang(ru) .about-page .about-breadcrumb {
+    font-size: 15px;
+  }
+
+  html:lang(ru) .about-page .about-eyebrow {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  html:lang(ru) .about-page .about-name {
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: .055em;
+    margin: 8px 0 10px;
+  }
+
+  html:lang(ru) .about-page .about-heading-mobile {
+    font-size: 20px;
+    line-height: 1.55;
+    margin-bottom: 30px;
+  }
+
+  html:lang(ru) .about-page .section-title {
+    font-size: 22px;
+    line-height: 1.4;
+    margin-bottom: 14px;
+  }
+
+  html:lang(ru) .about-page .about-topic {
+    padding-top: 22px;
+    padding-bottom: 26px;
+  }
+
+  html:lang(ru) .about-page .about-topic p {
+    font-size: 16px;
+    line-height: 1.8;
+    overflow-wrap: break-word;
+  }
+
+  html:lang(ru) .about-page .about-tools-grid li {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+}
+
+/* ==========================================================
+   RU PHONE — shared readability across all Russian pages.
+   Japanese and screens wider than 600px remain unchanged.
+   ============================================================== */
+@media (max-width: 600px) {
+  /* General supporting text on the RU landing page. */
+  html:lang(ru) .work-description p,
+  html:lang(ru) .about-text p,
+  html:lang(ru) .contact-card p,
+  html:lang(ru) .hero-description {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  html:lang(ru) .work-description h3 { font-size: 17px; line-height: 1.45; }
+  html:lang(ru) .tools-list li { font-size: 14px; }
+
+  /* Independent portfolio pages: 16px description, 18px caption titles. */
+  html:lang(ru) .pamphlets-page .pamphlet-intro > p,
+  html:lang(ru) .banners-page .banner-intro > div > p,
+  html:lang(ru) .videos-page .video-intro > p,
+  html:lang(ru) .pamphlets-page .pamphlet-caption p,
+  html:lang(ru) .banners-page .banner-caption p,
+  html:lang(ru) .videos-page .video-caption p {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  html:lang(ru) .pamphlets-page .pamphlet-caption h3,
+  html:lang(ru) .banners-page .banner-caption h3,
+  html:lang(ru) .videos-page .video-caption h3 {
+    font-size: 18px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+  html:lang(ru) .pamphlets-page .pamphlet-works > .section-title,
+  html:lang(ru) .banners-page .banner-section > .section-title,
+  html:lang(ru) .videos-page .video-works > .section-title {
+    font-size: 26px;
+    line-height: 1.4;
+    margin-bottom: 22px;
+  }
+
+  /* With larger Russian text, pamphlet cards need their full width. */
+  html:lang(ru) .pamphlets-page .pamphlet-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  html:lang(ru) .pamphlets-page .pamphlet-caption {
+    padding: 0 2px 8px;
+    min-height: 0;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  html:lang(ru) .pamphlets-page .pamphlet-description { min-width: 0; }
+  html:lang(ru) .pamphlets-page .pamphlet-caption p { margin-top: 5px; }
+
+  /* RU about page: preserve previously enlarged 16px biography. */
+  html:lang(ru) .about-page .about-topic p { font-size: 16px; line-height: 1.8; }
+
+  /* Supporting text on the RU contact page. */
+  html:lang(ru) .contact-page .contact-intro p,
+  html:lang(ru) .contact-page .contact-message p,
+  html:lang(ru) .contact-page .contact-note,
+  html:lang(ru) .contact-page .contact-form-status {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+}
+
+/* Russian tablet text: keep all headings unchanged; enlarge supporting text only. */
+@media (min-width: 601px) and (max-width: 1024px) {
+  html:lang(ru) .hero-description,
+  html:lang(ru) .work-description p,
+  html:lang(ru) .about-text p,
+  html:lang(ru) .contact-card p,
+  html:lang(ru) .pamphlets-page .pamphlet-intro > p,
+  html:lang(ru) .banners-page .banner-intro > div > p,
+  html:lang(ru) .videos-page .video-intro > p,
+  html:lang(ru) .pamphlets-page .pamphlet-caption p,
+  html:lang(ru) .banners-page .banner-caption p,
+  html:lang(ru) .videos-page .video-caption p,
+  html:lang(ru) .about-page .about-topic p,
+  html:lang(ru) .contact-page .contact-intro p,
+  html:lang(ru) .contact-page .contact-message p,
+  html:lang(ru) .contact-page .contact-note {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  html:lang(ru) .pamphlets-page .pamphlet-caption,
+  html:lang(ru) .videos-page .video-caption,
+  html:lang(ru) .banners-page .banner-caption { min-width: 0; }
+}
+
+/* RU tablet — align the Works heading with the other section headings,
+   and enlarge the home-page About copy only. */
+@media (min-width: 601px) and (max-width: 1024px) {
+  html:lang(ru) .works > .section-title {
+    justify-content: flex-start;
+  }
+  html:lang(ru) .about .about-text p {
+    font-size: 18px;
+    line-height: 1.75;
+    overflow-wrap: break-word;
+  }
+}

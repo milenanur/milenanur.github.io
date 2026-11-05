@@ -870,3 +870,28 @@ html[lang="ja"] .lessons-page .button {
   .contact-dialog .music-email-form { gap: 8px; }
   .contact-dialog .music-email-form h3 { font-size: 17px; }
 }
+
+/* Contact modal: correctly centered close button without the blue square on touch devices. */
+.contact-dialog .modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  line-height: 1;
+  text-align: center;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.contact-dialog .modal-close:focus-visible {
+  outline: 2px solid #555;
+  outline-offset: 2px;
+  border-radius: 50%;
+}
+@media (hover: none) and (pointer: coarse) {
+  .contact-dialog .modal-close:focus-visible {
+    outline: none;
+  }
+}

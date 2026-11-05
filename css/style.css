@@ -1052,7 +1052,7 @@ font-size: clamp(13px, 1.1vw, 16px);
     padding-block: 8px;
   }
   .logo {
-    font-size: 18px;
+    font-size: 24px;
   }
   .language {
     margin-left: auto;
@@ -1540,7 +1540,7 @@ font-size: clamp(13px, 1.1vw, 16px);
     padding-top: 16px;
   }
   .footer .logo {
-    font-size: 18px;
+    font-size: 22px;
   }
   .footer-location {
     gap: 5px;
@@ -1627,9 +1627,18 @@ html {
   }
 }
 
-/* Центрирование заголовка только секции работ на главных страницах JP и RU. */
-.works > .section-title {
-  justify-content: center;
+/* Заголовок работ: на ПК и планшете сохраняем исходное центрирование. */
+@media (min-width: 601px) {
+  .works > .section-title {
+    justify-content: center;
+  }
+}
+/* На телефоне заголовок работ выравнивается влево, как остальные разделы. */
+@media (max-width: 600px) {
+  .works > .section-title {
+    justify-content: flex-start;
+    margin-bottom: 24px;
+  }
 }
 
 /* Немного уменьшаем только иконку HTML для визуального баланса с CSS. */
@@ -1637,4 +1646,13 @@ html {
 .about-page .about-tools-grid img[src$="html-svgrepo-com.svg"] {
   transform: scale(0.95);
   transform-origin: center;
+}
+
+/* JP home: align the Works heading to the left on phone and tablet. */
+@media (max-width: 1024px) {
+  html:lang(ja) .works > .section-title {
+    justify-content: flex-start;
+    text-align: left;
+    margin-bottom: 24px;
+  }
 }

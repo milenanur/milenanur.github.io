@@ -17,7 +17,7 @@
       }
 
       .st2, .st3 {
-        font-family: Montserrat-Medium, Montserrat;
+        font-family: Montserrat-Medium, Montserrat, Arial, sans-serif;
         font-weight: 500;
       }
 
