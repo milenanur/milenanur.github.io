@@ -237,12 +237,12 @@ html:lang(ru) .contact-card p {
     transform: translateX(var(--swoosh-shift));
   }
   html:lang(ru) .about-text p {
-    font-size: clamp(12px, 3.2vw, 13px);
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-wrap: break-word;
   }
-  /* Mobile section headings have margin:0 in the base CSS. */
   html:lang(ru) .process > .section-title {
-    margin-bottom: 18px;
+    margin-bottom: 24px;
   }
   html:lang(ru) .contact-card h2 {
     font-size: 14px;
@@ -329,37 +329,40 @@ html:lang(ru) .contact-card p {
     row-gap: 20px;
   }
 
-  /* Four process steps: legible numbers, intact short headings. */
+  /* Тот же двухколоночный мобильный процесс, что и в японской версии. */
   html:lang(ru) .process-list {
-    gap: 17px;
+    gap: 20px;
   }
   html:lang(ru) .process-list li {
-    grid-template-columns: 34px 120px minmax(0, 1fr);
-    gap: 9px;
+    grid-template-columns: 44px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    gap: 4px 14px;
     align-items: start;
   }
   html:lang(ru) .step-number {
-    width: 34px;
-    height: 34px;
+    grid-column: 1;
+    grid-row: 1 / 3;
+    width: 44px;
+    height: 44px;
     margin: 0;
-    font-size: 12px;
-    line-height: 1;
-    align-self: start;
+    font-size: 16px;
   }
   html:lang(ru) .process-list h3 {
-    margin-top: 7px;
-    font-size: 13px;
-    line-height: 1.4;
-    white-space: nowrap;
-    overflow-wrap: normal;
-    word-break: normal;
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.45;
+    white-space: normal;
+    overflow-wrap: break-word;
   }
   html:lang(ru) .process-list p {
-    margin-top: 3px;
-    font-size: 12.5px;
-    line-height: 1.5;
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.65;
     overflow-wrap: break-word;
-    word-break: normal;
   }
 
   /* Form labels and entered text on the RU contact page. */
@@ -373,20 +376,20 @@ html:lang(ru) .contact-card p {
   }
 }
 
-/* Keep process text readable on the narrowest phone screens. */
+/* Узкие телефоны: сохраняем читаемый текст без третьей колонки. */
 @media (max-width: 359px) {
   html:lang(ru) .process-list li {
-    grid-template-columns: 32px 108px minmax(0, 1fr);
-    gap: 7px;
+    grid-template-columns: 42px minmax(0, 1fr);
+    column-gap: 12px;
   }
   html:lang(ru) .step-number {
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
   }
   html:lang(ru) .process-list h3 {
-    font-size: 12px;
+    font-size: 15px;
   }
   html:lang(ru) .process-list p {
-    font-size: 12px;
+    font-size: 15px;
   }
 }

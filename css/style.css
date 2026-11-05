@@ -1034,7 +1034,14 @@ font-size: clamp(13px, 1.1vw, 16px);
   .section-title {
     gap: 8px;
     margin: 0;
-    font-size: 24px;
+    font-size: 27px;
+    line-height: 1.25;
+  }
+  /* Отступы только у блоков главной страницы (JP/RU). */
+  .tools > .section-title,
+  .about > .section-title,
+  .process > .section-title {
+    margin-bottom: 24px;
   }
   /* ---------- Шапка и мобильное меню ---------- */
   .header-inner {
@@ -1367,13 +1374,13 @@ font-size: clamp(13px, 1.1vw, 16px);
     padding: 5px 6px 28px 10px;
   }
   .work-description h3 {
-    margin-bottom: 5px;
-    font-size: 13px;
+    margin-bottom: 6px;
+    font-size: 15px;
     line-height: 1.4;
   }
   .work-description p {
-    font-size: 10px;
-    line-height: 1.5;
+    font-size: 12.5px;
+    line-height: 1.55;
   }
   .work-description p br {
     display: none;
@@ -1391,13 +1398,14 @@ font-size: clamp(13px, 1.1vw, 16px);
     gap: 18px 12px;
   }
   .tools-list li {
-    gap: 6px;
-    font-size: 9px;
+    gap: 7px;
+    font-size: 12px;
+    line-height: 1.4;
   }
   .tools-list img,
   .tool-text {
-    width: 42px;
-    height: 42px;
+    width: 48px;
+    height: 48px;
   }
   .tool-text {
     font-size: 26px;
@@ -1411,22 +1419,23 @@ font-size: clamp(13px, 1.1vw, 16px);
   }
   .about-content {
     align-items: flex-start;
-    gap: 12px;
+    gap: 16px;
   }
   .about-photo {
-    flex-basis: 88px;
-    height: 108px;
+    flex-basis: 96px;
+    height: 125px;
   }
   .about-text p {
-    margin-bottom: 12px;
-    font-size: 11px;
-    line-height: 1.6;
+    max-width: 100%;
+    margin-bottom: 16px;
+    font-size: 15px;
+    line-height: 1.7;
   }
   .about .button {
     gap: 8px;
-    min-height: 34px;
-    padding: 6px 12px;
-    font-size: 11px;
+    min-height: 42px;
+    padding: 8px 12px;
+    font-size: 13px;
   }
   .about .button img {
     width: 18px;
@@ -1444,34 +1453,41 @@ font-size: clamp(13px, 1.1vw, 16px);
   }
   .process-list {
     grid-template-columns: minmax(0, 1fr);
-    gap: 10px;
+    gap: 20px;
   }
   .process-list li {
     display: grid;
-    grid-template-columns: 24px 90px minmax(0, 1fr);
-    align-items: center;
-    gap: 8px;
+    grid-template-columns: 44px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    align-items: start;
+    column-gap: 14px;
+    row-gap: 4px;
   }
   .process-list li:not(:last-child)::after {
-    top: 18px;
-    left: 36px;
-    right: -10px;
     display: none;
   }
   .step-number {
-    margin-bottom: 12px;
-    width: 24px;
-    height: 24px;
+    grid-column: 1;
+    grid-row: 1 / 3;
+    width: 44px;
+    height: 44px;
     margin: 0;
-    font-size: 9px;
+    font-size: 16px;
+    line-height: 1;
   }
   .process-list h3 {
+    grid-column: 2;
+    grid-row: 1;
     margin: 0;
-    font-size: 12px;
+    font-size: 16px;
+    line-height: 1.45;
   }
   .process-list p {
-    font-size: 10px;
-    line-height: 1.5;
+    grid-column: 2;
+    grid-row: 2;
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.65;
   }
   /* ---------- Контакты ---------- */
   .contact-card h2,
