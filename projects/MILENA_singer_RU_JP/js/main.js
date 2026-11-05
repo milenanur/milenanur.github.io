@@ -1,5 +1,5 @@
 /* Контакты музыкального проекта. Почта отправляется через отдельную форму Formspree. */
-const CONTACTS = { LINE: 'https://lin.ee/xIn5Een', Telegram: 'https://t.me/MilenaNur', Facebook: '', Instagram: '' };
+const CONTACTS = { LINE: 'https://lin.ee/xIn5Een', Telegram: 'https://t.me/MilenaNur', Facebook: 'https://www.facebook.com/share/19y13DBiFF/?mibextid=wwXIfr', Instagram: 'https://www.instagram.com/milena_in_japan/' };
 const isJapanese=document.documentElement.lang==='ja';
 const menuLabels=isJapanese?['メニューを開く','メニューを閉じる']:['Открыть меню','Закрыть меню'];
 const menuButton=document.querySelector('.menu-toggle');
