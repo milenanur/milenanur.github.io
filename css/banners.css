@@ -481,6 +481,10 @@
     margin-top: 10px;
     font-size: 14px;
     line-height: 1.7;
+    line-break: strict;
+    word-break: normal;
+    overflow-wrap: normal;
+    text-wrap: pretty;
   }
 
   /* Счётчик количества работ и вертикальная линия слева от него */
