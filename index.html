@@ -43,10 +43,10 @@
 <style>
   .works-grid > [hidden] { display: none !important; }
   @media (min-width: 1025px) {
-    .works-grid--featured { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-    .works-grid--featured > .work-card { grid-column: span 2; }
-    .works-grid--featured > .work-card--bakery { grid-column: 2 / span 2; }
-    .works-grid--featured > .work-card--singer { grid-column: 4 / span 2; }
+    .works-grid--featured { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .works-grid--featured > .work-card,
+    .works-grid--featured > .work-card--bakery,
+    .works-grid--featured > .work-card--singer { grid-column: auto; }
   }
 </style>
 </head>
@@ -154,21 +154,17 @@
           制作実績
         </h2>
 <div class="works-grid works-grid--featured">
-<!-- 1. Сайт школы -->
-<!-- Когда будет адрес сайта, заменим article на a со ссылкой -->
-<article class="work-card work-link" hidden aria-hidden="true">
-<img alt="ロシア語学校のWebサイトデザイン" class="work-image" loading="lazy" src="images/photos/card-school.webp"/>
+<!-- 1. RODINA — Новый год, сайт заказа билетов -->
+<a class="work-card work-link work-card--rodina" id="websites" href="https://ss683670.stars.ne.jp/" target="_blank" rel="noopener noreferrer">
+<img alt="RODINA 新年イベント・チケット申込サイト" class="work-image" loading="lazy" src="images/photos/card-rodina.webp"/>
 <div class="work-description">
-<h3>学校サイト</h3>
-<p>
-                ロシア語を通して広がる、子どもたちの世界。<br/>
-                教室の活動や魅力を紹介するサイト。
-              </p>
+<h3>イベント・チケット申込サイト</h3>
+<p>新年イベントの案内から、<br/>チケット申込まで対応するサイト。</p>
 <img alt="" class="work-arrow" src="images/icons/arrow-up-right.svg"/>
 </div>
-</article>
+</a>
 <!-- 2. Сайт пекарни -->
-<a class="work-card work-link work-card--bakery" id="websites" href="projects/BACERY/index.html?lang=ja" target="_blank" rel="noopener noreferrer">
+<a class="work-card work-link work-card--bakery" href="projects/BACERY/index.html?lang=ja" target="_blank" rel="noopener noreferrer">
 <img alt="ベーカリーのWebサイトデザイン" class="work-image" loading="lazy" src="images/photos/card-bacery.webp"/>
 <div class="work-description">
 <h3>ベーカリーサイト</h3>

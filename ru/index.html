@@ -18,10 +18,10 @@
 <style>
   .works-grid > [hidden] { display: none !important; }
   @media (min-width: 1025px) {
-    .works-grid--featured { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-    .works-grid--featured > .work-card { grid-column: span 2; }
-    .works-grid--featured > .work-card--bakery { grid-column: 2 / span 2; }
-    .works-grid--featured > .work-card--singer { grid-column: 4 / span 2; }
+    .works-grid--featured { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .works-grid--featured > .work-card,
+    .works-grid--featured > .work-card--bakery,
+    .works-grid--featured > .work-card--singer { grid-column: auto; }
   }
 </style>
 </head>
@@ -129,21 +129,17 @@
           Мои работы
         </h2>
 <div class="works-grid works-grid--featured">
-<!-- 1. Сайт школы -->
-<!-- Когда будет адрес сайта, заменим article на a со ссылкой -->
-<article class="work-card work-link" hidden aria-hidden="true">
-<img alt="Русской школы — дизайн сайта" class="work-image" loading="lazy" src="../images/photos/card-school.webp"/>
+<!-- 1. RODINA — новогодний праздник, сайт заказа билетов -->
+<a class="work-card work-link work-card--rodina" id="websites" href="https://ss683670.stars.ne.jp/" target="_blank" rel="noopener noreferrer">
+<img alt="RODINA — новогодний праздник и заказ билетов" class="work-image" loading="lazy" src="../images/photos/card-rodina.webp"/>
 <div class="work-description">
-<h3>Сайт школы</h3>
-<p>
-                Русский язык открывает детям мир.<br/>
-                Сайт о занятиях и жизни школы.
-              </p>
+<h3>Сайт заказа билетов RODINA</h3>
+<p>Афиша новогоднего праздника,<br/>регистрация гостей и заказ билетов.</p>
 <img alt="" class="work-arrow" src="../images/icons/arrow-up-right.svg"/>
 </div>
-</article>
+</a>
 <!-- 2. Сайт пекарни -->
-<a class="work-card work-link work-card--bakery" id="websites" href="../projects/BACERY/index.html?lang=ru" target="_blank" rel="noopener noreferrer">
+<a class="work-card work-link work-card--bakery" href="../projects/BACERY/index.html?lang=ru" target="_blank" rel="noopener noreferrer">
 <img alt="Пекарни — дизайн сайта" class="work-image" loading="lazy" src="../images/photos/card-bacery.webp"/>
 <div class="work-description">
 <h3>Сайт пекарни</h3>
